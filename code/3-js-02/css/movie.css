@@ -1,0 +1,22 @@
+
+.list{
+    width: 500px;
+    height: 200px;
+    border: 1px solid lightgray;
+
+    margin:0 auto;
+
+    overflow: auto;
+}
+
+.list li{
+    height: 50px;
+    border-bottom: 1px dotted lightgray;
+    line-height: 50px;
+}
+
+.list li a{
+    color:black;
+    font-size: 18px;
+    text-decoration: none;
+}

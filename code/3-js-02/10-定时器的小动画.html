@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10-定时器的小动画</title>
+    <style>
+        body{
+            margin:0;
+        }
+        .box{
+            width: 200px;
+            height: 300px;
+            background: red;
+            
+            margin-top: 200px;
+            margin-left: 0;
+        }
+    </style>
+
+    <script>
+         window.onload = function () {
+             
+             //1.获取标签
+            var oDiv = document.getElementById('div1');
+
+            //  2.修改 margin-left
+            // 速度
+            var iSpeed = 0;
+            // 方向
+            var iDirection = 5;
+            function fnAnimation() {
+
+                // 累加
+               iSpeed += iDirection;
+
+                // 判断范围 300px;
+                // if(oDiv.style.marginLeft >300){
+                    //   注意返回的 left 带单位的 305px > 300
+                // }
+                if( iSpeed > 300){
+                    // 往左跑
+                    iDirection = -5;
+                }
+
+                if (iSpeed < 0) {
+                    
+                    // 往右边
+                    iDirection = 5;
+                }
+                
+                // 修改 margin-left  千万注意:单位
+                oDiv.style.marginLeft = iSpeed + 'px';
+                console.log('定时器在活动')
+            }
+
+            // 3.开启 反复执行的 定时器
+            setInterval(fnAnimation,30);
+
+            var sStr = "310px";
+
+            var sResult = parseInt(sStr);
+
+            console.log(sResult)
+
+         }
+    </script>
+</head>
+<body>
+    <div class="box" id="div1">
+
+    </div>
+</body>
+</html>

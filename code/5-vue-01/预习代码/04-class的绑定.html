@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <style>
+        .red{
+            color:red;
+        }
+        .green{
+            color: green;
+        }
+        .one{
+            font-size: 50px;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el:'#box',
+                data:{
+                    cla:"red",
+                    mes:'class绑定多个 对象',
+                    objectClass:{
+                        
+                        green:true,
+                    },
+                    isTrue:false,
+                    style01:{
+                        "font-size":"30px",
+                        "color":"red",
+                        "font-weight":"bold"
+                    },
+                    style02:{
+                        "font-style":"italic"
+                    }
+                }
+                
+            })
+        }
+    </script>
+</head>
+<body>
+    <div  id="box">
+        <!-- <p :style = "[style01,style02]">哈哈哈哈</p>
+        <p :style="style01">样式的绑定</p>
+        <p :class = 'isTrue?"red":"green"'>class 根据变量操作</p>
+        <p :class = '{red:isTrue}'>class 根据变量操作</p> -->
+        <p :class="cla">class绑定多个 字符串</p>
+        <!-- <p :class="objectClass">绑定多个对象</p>
+        <p :class='["red","one"]'>{{mes}}</p> -->
+    </div>
+    
+</body>
+</html>

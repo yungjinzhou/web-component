@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-vue的基本语法</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            // 创建vue对象
+            var vm = new Vue({
+                el:'.box',
+                data:{
+                    // 1.操作数据
+                    content:"操作数据",
+                    linkData:"淘宝链接",
+                    url:'http://www.taobao.com',
+                    counter:0
+                },
+                methods:{
+                    fnAddClick:function(){
+                        // this --vue对象
+                        this.counter += 1;
+                    }
+                }
+            })  
+            // 2.修改属性 指令 v-bind:
+            // 3.调用方法 指令  v-on:
+        }
+    </script>
+</head>
+<body>
+
+    <div class="box">
+        <!-- // 3.调用方法 指令  v-on: -->
+        <button v-on:click="fnAddClick">计数器: {{counter}}</button>
+        <!--  // 2.修改属性 指令 v-bind: -->
+        <a v-bind:href="url" target='_blank'>{{linkData}}</a>
+        <!--  // 1.操作数据 -->
+        <p>{{content}}</p>
+    </div>
+    
+    
+</body>
+</html>

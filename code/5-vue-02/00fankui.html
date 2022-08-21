@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <style>
+        .font{
+            list-style: none;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            
+            var vm = new Vue({
+                
+                el:'.box',
+                data:{
+                    dataList:[1,2,3,4],
+                    list:'font'
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul :class="list">
+            <li v-for="(item,index) in dataList">{{item}}</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
+<!--  
+	比较晕
+    飞哥以前肯定是大牛级别程序员吧,
+    敲代码速度太快了,
+    手速
+
+    有时候有点跟不上.
+
+    methods和事件是组合使用的吗? 是
+
+    computed:常用于复杂逻辑的表达式?
+    计算可以写 可不写
+    vue对象
+    return 出结果
+    html content. js功能 countrer += 1
+
+
+    看来是时候找个前端的妹子了
+   
+    
+    音响声音小一点
+    
+	希望老师多多总结,可以稍微往细腻的讲一下,谢谢
+ -->

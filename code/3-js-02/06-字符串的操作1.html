@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-字符串的操作1</title>
+
+    <script>
+        window.onload = function () {
+            
+            // 1.拼接 +
+            var sName = '隔壁的王叔叔';
+            var sSon = '大头儿子';
+            var sResult = sName + sSon + '是一家人嘛?'
+
+
+            // 2.类型转换 
+            // 手动转化 parseInt parseFloat
+            // 隐式转化  系统帮我们转换 * / - ==
+            var iOne = 200;
+            var sOne = "200";
+            // var sResult = iOne + parseInt(sOne);
+            // var sResult = iOne / sOne;
+            
+            //  精度问题
+            var fOne = 0.1;
+            var fTwo = 0.2;
+            var sResult = fOne * 100 + fTwo * 100;
+
+            // alert(sResult)
+
+            // 3. ==
+            //  === 先判断类型,在判断值
+            var iOne = 200;
+            var sOne = "200";
+
+            if (iOne == sOne) {
+                // alert("相等")
+            }
+
+            if (iOne === sOne) {
+                alert("相等")
+            }else{
+                alert("不相等")
+            }
+            
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

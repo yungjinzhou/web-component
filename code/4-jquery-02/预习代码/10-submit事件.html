@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Docu11-submit事件ment</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(function () {
+            var $form = $("form");
+
+            //监听 表单的提交
+            $form.submit(function () {
+
+                    //1.自定义网络请求 url
+
+
+                    //2.拦截系统的提交 默认行为
+                 return false;
+            })
+
+            //js的写法
+            // oForm.onsubmit = function () {
+                
+            // }
+
+        })
+    
+    </script>
+</head>
+<body>
+
+    <form action="" >
+
+        <input type="text" value="亚洲国际舞王尼古拉斯赵四" name="username">
+        <input type="submit">
+    </form>
+    
+</body>
+</html>

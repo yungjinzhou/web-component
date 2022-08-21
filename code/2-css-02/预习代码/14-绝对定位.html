@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            /* 文档流 标准流
+                按照html的标签的特点:从左到右,或从上到下, 块元素占一行;
+                行内元素并排一行,
+             */
+
+             /* 定位 position
+             相对定位:relative: 以自身位置为基准,移动之后原先的位置还在
+             绝对定位:absolute  以父元素为基准.,如果父元素没有设置相对定位(以body为准)不占位置,脱离文档流;
+             固定定位:fixed
+             默认没有:static
+
+             left
+             right
+             top
+             bottom
+             
+              */
+
+            .bigbox{
+                width: 600px;
+                height: 600px;
+                border: 1px solid red;
+
+                margin:0 auto;
+
+                /* 相对定位 */
+                position: relative;
+            }
+              .box{
+                  width: 200px;
+                  height: 200px;
+                  background-color: red;
+
+                /* 绝对定位 */
+                position: absolute;
+                left: 50px;
+                top: 50px;
+              }
+    </style>
+</head>
+<body>
+
+    <div class="bigbox">
+            <div class="box"></div>
+    </div>
+
+    <div>div标签</div>
+    
+</body>
+</html>

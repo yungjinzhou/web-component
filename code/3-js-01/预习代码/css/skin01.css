@@ -1,0 +1,13 @@
+body{
+    background:#ddd;
+}
+
+input{
+    width:200px;
+    height:60px;
+    border:0px;
+    background:pink;
+    border-radius:30px;
+    font-size:20px;
+    outline:none;
+}

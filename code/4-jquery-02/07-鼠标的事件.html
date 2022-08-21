@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-鼠标的事件</title>
+    <style>
+       .red{
+           width: 400px;
+           height: 400px;
+           background: red;
+           overflow: hidden;
+       }
+       .green{
+           height: 100px;
+           background: green;
+           margin-top:100px;
+           font-size: 30px;
+           color: white;
+           font-weight: bold;
+       }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function () {
+          
+        // 1.click
+        // 2.mouseover mouseout 进入子元素 会触发事件
+        var index = 0;
+            // $('.red').mouseover(function () {
+            //     index++;
+            //     $('.green').html(index);
+            // })
+            // $('.red').mouseout(function () {
+            //     index++;
+            //     $('.green').html(index);
+            // })
+
+        // 3.mouseenter mouseleave 进入子元素 不会触发事件
+            // $('.red').mouseenter(function () {
+            //     index++;
+            //     $('.green').html(index);
+            // })
+            // $('.red').mouseleave(function () {
+            //     index++;
+            //     $('.green').html(index);
+            // })
+        // 4.hover 监听 进入 移开
+        $('.red').hover(function (event) {
+            console.log(event.type);
+            // index++;
+            // $('.green').html(index);
+
+            // if (event.type == "mouseenter") {
+                
+            // } else {
+                
+            // }
+        })
+
+      
+
+
+      })
+    </script>
+</head>
+<body>
+
+    <div class="red">
+        <div class="green"></div>
+    </div>
+    
+</body>
+</html>

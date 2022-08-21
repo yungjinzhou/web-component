@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-循环语句</title>
+
+    <script>
+        window.onload = function () {
+            
+            // 1.for i++ i-- 自增 自减
+            for (var i = 0; i < 3; i++){
+                    // console.log(i);
+            }
+            
+            var aOne = ["A","a",1,2,3];
+            for(var i = 0; i < aOne.length; i++){
+
+                // console.log(aOne[i]);
+            }
+
+
+            // 2.while
+            //  循环 5次
+            //  全局的变量
+            var number = 0;
+            while (number < 5){
+                
+                // console.log(number);
+                number += 1;
+                
+                //局部变量
+                var iIndex = 0 ;
+                iIndex++;
+                console.log(iIndex);
+            }
+
+        }    
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

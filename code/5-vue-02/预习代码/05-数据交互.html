@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据交互</title>
+    <script src="js/vue.js"></script>
+    <script src="js/axios.min.js"></script>
+    <!-- 1.到库 js -->
+    <script>
+            window.onload = function () {
+                var vm = new Vue({
+                    el:'.box',
+                    data:{
+                        dataList:[],
+                        name:"中间件昂三"
+                    },
+                    methods:{
+                        fnAdd:function () {
+                            //    点击按钮 发送请求 获取数据
+                            // vue
+                            axios({
+                                url:'http://localhost:8888/data.json',
+                                method:'get',
+                                // data:{},
+                            })
+                            .then(function (dat) {
+                                // dat--response对象 会包含很多http的东西
+                                console.log(dat.data)
+                            })
+                            .catch(function () {
+                                alert('网不行!')
+                            })
+                            // $.ajax( {
+                            //     url:'',
+                            //     type:'',
+                            //     dataType:'',
+                            //      data:''
+                            // })
+                            // .done(function () {
+                                
+                            // })
+                            // .fail(function () {
+                                
+                            // })
+                        }
+                      
+                    },
+                    // 对象挂载之后 使用的时候 数据加载
+                    // 用户一使用 我就需要加载数据
+                    mounted:function(){
+                       
+                         //    程序一启动 就在加载数据
+                         axios({
+                             url:'http://localhost:8888/data.json',
+                             method:'get',
+                         })
+                        //  箭头函数
+                         .then(response => {
+                            //  alert(this) --window
+                            // 使用箭头函数 将this的指向  改变成 vue对象
+                            alert(this.name)
+                             this.dataList = response.data;
+                         })
+                         .catch(function () {
+                             alert('请求失败')
+                         })
+
+                        //  简写 $.get $.post
+                        axios.get('http://abc.com?username=a')
+                        .then(function () {
+                            
+                        })
+                        // post
+                        axios.post('url',{
+                            data:''
+                        })
+                        .then(function () {
+                            
+                        })
+                    }
+                })
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+            <ul>
+                <li v-for="item in dataList">{{item}}</li>
+            </ul>
+
+            <button @click="fnAdd">点击按钮请求数据</button>
+    
+    
+        </div>
+        
+    </body>
+    </html>

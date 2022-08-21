@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10-操作样式类名称</title>
+    <style>
+        .red{
+            color:red;
+        }
+        .green{
+            color:green;
+        }
+        .font{
+            font-size: 50px;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // 10-操作 样式  类名称class
+
+            var $div = $('div');
+
+            // 1.增加 样式类
+            $div.addClass('red');
+            $div.addClass('font')
+
+            // 2.删除 样式类
+            // $div.removeClass('red');
+
+            // 3.了解  切换
+            // 如果有    就删除
+            // 如果没有  就增加
+            $div.toggleClass('red')
+           
+            
+        })
+    </script>
+</head>
+<body>
+
+    <div>
+        操作 样式  类名称class
+    </div>
+    
+</body>
+</html>

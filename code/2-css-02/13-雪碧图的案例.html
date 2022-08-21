@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13-雪碧图的案例</title>
+    <!-- 13-雪碧图
+
+        雪碧:  sprite 精灵图
+        一张大图上面有多个 小图
+
+        节约资源: 200ge小  200次; 
+
+        1次 改变位置
+    -->
+    <style>
+
+        .list{
+            width: 300px;
+            margin: 0 auto;
+            list-style: none;
+
+            /* 设置一个背景图 */
+            /* background: url('./images/bg01.png') no-repeat 0px 0px; */
+        }
+
+        .list li{
+            height: 60px;
+            border-bottom: 1px dotted lightgray;
+            line-height: 60px;
+            text-indent: 45px;
+            /* 每一个li设置一个背景图 
+            图片的间距 是80
+            */
+            background: url('./images/bg01.png') no-repeat 0px 11px; 
+        }
+
+        .list .li2{
+            background-position-y: -69px;
+        }
+        .list .li3{
+            background-position-y: -149px;
+        }
+        .list .li4{
+            background-position-y: -233px;
+        }
+        .list .li5{
+            background-position-y: -314px;
+            background-color:#fd0003;
+        }
+
+
+        .list li a{
+            color: black;
+            text-decoration: none;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <!-- ul.list>(li>a{后来的我们})*5 -->
+    <ul class="list">
+        <li><a href="#">后来的我们</a></li>
+        <li class="li2"><a href="#">美人鱼</a></li>
+        <li class="li3"><a href="#">下水道的美人鱼</a></li>
+        <li class="li4"><a href="#">后来的我们</a></li>
+        <li class="li5"><a href="#">后来的我们</a></li>
+    </ul>
+    
+    <!-- <img src="./images2/006.svg" alt="小车"> -->
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-定位的层级关系</title>
+   <!-- 08-定位的层级关系
+
+        z-index 默认值 0
+    -->
+
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        .red{
+            background-color: red;
+            /* 绝对定位 */
+            position: absolute;
+            top: 50px;
+            left:50px;
+
+            /* 层级 */
+            z-index:1
+        }
+        .green{
+            background-color: green;
+              /* 绝对定位 */
+              position: absolute;
+            top: 80px;
+            left:80px;
+
+            /* 层级 */
+            z-index:2;
+        }
+        .blue{
+            background-color: blue;
+              /* 绝对定位 */
+              position: absolute;
+            top: 110px;
+            left:110px;
+            /* 层级 */
+            z-index:9999
+        }
+    </style>
+</head>
+<body>
+    <!-- div.red+div.green+div.blue -->
+    <div class="red"></div>
+   
+    <div class="green"></div>
+
+    <div class="blue"></div>
+   
+    
+</body>
+</html>

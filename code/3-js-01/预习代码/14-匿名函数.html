@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>14-匿名函数</title>
+
+    <script>
+        
+        window.onload = function () {
+        
+                // 14-匿名函数
+                //单独的匿名函数 报错
+        //    function (){
+
+        //    }
+
+            var oBtn = document.getElementById("btn");
+
+            // 监听按钮点击
+            oBtn.onclick = function () {
+                alert("匿名函数");
+            };
+        }
+    
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="普通按钮">
+</body>
+</html>

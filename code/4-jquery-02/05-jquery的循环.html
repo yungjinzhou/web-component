@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-jquery的属性操作2</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+
+    
+        $(function () {
+
+            var $lis = $('.list li');//5个
+            
+            $lis.each(function (index,elem) {
+                
+                // 了解 两个参数
+                console.log(index);
+                // 原生js的标签对象
+                console.log(elem);
+
+                // jquery的
+                console.log($(this));
+
+                 $(elem).click(function () {
+                    $(this).css(
+                        {
+                            "color":"red",
+                        }
+                    )
+                })
+                
+                // $(this).click(function () {
+                //     $(this).css(
+                //         {
+                //             "color":"red",
+                //         }
+                //     )
+                // })
+            })
+
+
+            // 每一个li 单独绑定 click事件; js和jquery混用
+            //  js原生对象 数组[i] 
+            //  jquery的对象
+            // for (var index = 0; index < $lis.length; index++) {
+
+            //     var $element = $lis.eq(index);
+                
+            //     // 点击事件
+            //     $element.click(function () {
+            //         $(this).css({
+            //             "color":"red"
+            //         })
+            //     })
+                
+            // }
+            
+            // 一次性绑定 5个
+            // $lis.click(function () {
+                
+            //     $(this).css(
+            //         {
+            //             'color':"red"
+            //         }
+            //     )
+            // })
+        })
+    </script>
+</head>
+<body>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>

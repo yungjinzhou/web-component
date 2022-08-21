@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+
+                // 组件 
+                // Vue.component('组件名字',{组件的内容})
+                Vue.component('div-component',{
+                    template:'<div style="background: red;text-align: center">vue对象的生命周</div>'
+                })
+
+                Vue.component('navbar',{
+                    template:'  <div class="app" style="background: lightgray;line-height: 40px;height: 40px;">'
+                                + ' <span>欢迎来带传智播客!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>'
+                                + '<span>登录注册</span>'
+                                + ' <span style="float: right;">分校地址</span>'
+                                + '</div>'
+                               
+                })
+                var vm = new Vue({
+                    el:'.box'
+                })
+            }
+        </script>
+    </head>
+    <body>
+
+    
+        <div class="box">
+
+            <navbar></navbar>
+            <navbar></navbar>
+            <navbar></navbar>
+            
+            <div-component></div-component>
+            
+        </div>
+        
+    </body>
+    </html>

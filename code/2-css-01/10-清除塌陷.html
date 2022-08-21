@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10-清除塌陷</title>
+
+    <style>
+        /* -清除塌陷
+        1.嵌套
+        2.margin-top
+        3.没有主动设置边界
+
+         清除塌陷 
+
+        1.border padding
+        2.over-flow:hidden
+        3.伪类  实际开发使用
+         */
+        .clearfix:before{
+            content: "";
+            display: table;
+        }
+
+        .red{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+
+            /* border: 1px solid red; */
+            /* padding: 1px; */
+            /* 系统自动检测边界 */
+            /* overflow: hidden; */
+        }
+        .green{
+            width: 400px;
+            height: 200px;
+            background-color: green;
+
+            margin-top:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="red clearfix">
+        <div class="green"></div>
+    </div>
+    
+</body>
+</html>

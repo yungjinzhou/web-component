@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>todolist</title>
+	<style type="text/css">
+		.list_con{
+			width:600px;
+			margin:50px auto 0;
+		}
+		.inputtxt{
+			width:550px;
+			height:30px;
+			border:1px solid #ccc;
+			padding:0px;
+			text-indent:10px;			
+		}
+		.inputbtn{
+			width:40px;
+			height:32px;
+			padding:0px;
+			border:1px solid #ccc;
+		}
+		.list{
+			margin:0;
+			padding:0;
+			list-style:none;
+			margin-top:20px;
+		}
+		.list li{
+			height:40px;
+			line-height:40px;
+			border-bottom:1px solid #ccc;
+		}
+
+		.list li span{
+			float:left;
+		}
+
+		.list li a{
+			float:right;
+			text-decoration:none;
+			margin:0 10px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			
+			// 1.获取对应的标签
+			var $txt = $("#txt1");
+			var $addBtn = $("#btn1");
+			var $list = $(".list");
+
+			// 2.监听增加
+			$addBtn.click(function () {
+				// 3.判断输入是否为空
+				var sContent = $txt.val();
+				if (sContent == "") {
+					alert("输入不能为空");
+					return;
+				}
+
+				//3.1 增加节点 jquery对象
+				var $newLi = $('<li><span>' + sContent +'</span><a href="javascript:;" class="up"> ↑ </a><a href="javascript:;" class="down"> ↓ </a><a href="javascript:;" class="del">删除</a></li>');
+				$newLi.appendTo($list);
+
+				//3.2清空输入的内容
+				$txt.val("");
+				
+			})
+
+		
+			// 4.删除 排序 上 下
+			$list.delegate("a","click",function () {
+					
+					//根据类名称来判断 删除 上 下
+					var sClassName = $(this).prop("class");
+					if (sClassName == "del") {//删除
+						//li
+						$(this).parent().remove();
+					} else if (sClassName == "up"){//上
+
+						//1.获取上面的标签
+						var $upLi = $(this).parent().prev();
+
+						//判断是否 到头了
+						if ($upLi.length == 0) {
+							alert("到头了");
+							return;
+						}
+
+						//2.获取当前标签
+						var $currentLi = $(this).parent();
+
+						//3.调换位置
+						$upLi.insertAfter($currentLi);
+	
+					} else if (sClassName == "down"){//下
+						//1.获取下面的标签
+						var $downLi = $(this).parent().next();
+						//判断是否 到底了
+						if ($downLi.length == 0) {
+							alert("到底了");
+							return;
+						}
+
+						//2.获取当前标签
+						var $currentLi = $(this).parent();
+
+						//3.调换位置
+						$downLi.insertBefore($currentLi);
+						
+					}
+
+				});
+
+			
+
+			
+		})
+
+	</script>	
+</head>
+<body>
+
+	<div class="list_con">
+	<h2>To do list</h2>
+		<input type="text" name="" id="txt1" class="inputtxt">
+		<input type="button" name="" value="增加" id="btn1" class="inputbtn">
+		
+		<ul id="list" class="list">
+				
+			<li><span>学习html</span><a href="javascript:;" class="up"> ↑ </a><a href="javascript:;" class="down"> ↓ </a><a href="javascript:;" class="del">删除</a></li>
+			<li><span>学习css</span><a href="javascript:;" class="up"> ↑ </a><a href="javascript:;" class="down"> ↓ </a><a href="javascript:;" class="del">删除</a></li>
+			<li><span>学习javascript</span><a href="javascript:;" class="up"> ↑ </a><a href="javascript:;" class="down"> ↓ </a><a href="javascript:;" class="del">删除</a></li>
+
+		</ul>
+
+	</div>
+</body>
+</html>

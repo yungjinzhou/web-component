@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-CSS的属性提升</title>
+    <style>
+        .box{
+
+            width: 1000px;
+            height: 300px;
+            border: 1px solid red;
+
+            /* 文字居中 */
+            text-align: center;
+
+            /* 首行缩进 */
+
+        }
+
+        .box p{
+
+            /* 首行缩进  px  em*/
+             /* text-indent: 50px;  */
+             text-indent: 2em;
+
+
+             /* 斜体  italic*/
+             color: red;
+             /* font-style: italic;
+             font-size: 20px;
+             font-family: "Microsoft Yahei";
+             line-height: 40px; */
+
+
+             /* font属性连写 顺序不能随便写: */
+                   /* 是否斜体  字体大小/行高    字体 */
+             font:italic 20px/40px "Microsoft Yahei";
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>逆时营救》曝杨幂PK霍建华特辑</h1>
+        <p>
+            搜狐娱乐讯 7年后，老友大银幕上再合作，他们之间的角色关系是？杨幂和搜狐娱乐讯 7年后，老友大银幕上再合作，他们之间的角色关系是？杨幂和搜狐娱乐讯 7年后，老友大银幕上再合作，他们之间的角色关系是？杨幂和搜狐娱乐讯 7年后，老友大银幕上再合作，他们之间的角色关系是？杨幂和搜狐娱乐讯 7年后，老友大银幕上再合作，他们之间的角色关系是？杨幂和搜狐娱乐讯 7年后，老友大银幕上再合作，他们之间的角色关系是？杨幂和搜狐娱乐讯 7年后，老友大银幕上再合作，他们之间的角色关系是？杨幂和霍建华，对《逆时营救》里两人的关系给出了对立又逗趣的答案霍建华：相爱相杀。杨幂：没有相爱，只有相杀。
+        </p>
+
+    </div>
+    
+</body>
+</html>

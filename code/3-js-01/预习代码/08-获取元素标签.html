@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-获取元素标签</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+
+    <script>   
+            //1.等window 窗口加载完毕 已经显示的 时候 获取标签  
+           window.onload = function () {
+                //    1.1获取div的标签 u    qweR8UHY6
+                var oDiv = document.getElementById("div1");
+                var oDiv = document.getElementsByTagNameNS("input","haha").length
+                //验证
+                alert(oDiv);
+           }
+    </script>
+   
+</head>
+<body>
+
+        <div class="box" id="div1"></div>
+        <input type="text" name="haha">
+    
+</body>
+</html>
+

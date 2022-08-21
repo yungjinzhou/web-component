@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义过滤器</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+
+            Vue.filter("isOver",function (num) {
+                if (num == "" ) {
+                    return "没有钱"
+                }
+
+                return num + '¥'
+            })
+            var vm = new Vue({
+                el:'.box',
+                data:{
+                    age:20,
+                },
+                filters:{
+                    canSeeMovie:function(num){
+                        if (num < 18) {
+                            return "不允许看电影"
+                        }
+
+                        return "请继续观看"
+                    }
+                }
+
+            })
+
+            var vm2 = new Vue({
+
+                el:'.box2',
+                data:{
+                    monney:20
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <p>{{age | canSeeMovie}}</p>
+    </div>
+
+    <div class="box2">
+        <p>{{monney | isOver }}</p>
+    </div>
+</body>
+</html>

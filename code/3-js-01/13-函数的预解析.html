@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13-函数的预解析</title>
+
+    <script>
+            window.onload = function () {
+                
+                // 预解析 预编译;先执行  系统会自动往下检查 找到你定义的方法 调用
+                fnAlert();
+                
+                // 变量的预编译, 系统将变量 自动赋值 成 undefined类型
+                alert(iNumber);
+
+                
+                // 1.先定义
+                function fnAlert() {
+                    alert('函数的预解析');
+                }
+                // 2.后执行
+                // fnAlert();
+
+                // 变量
+                var iNumber = 200;
+            }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

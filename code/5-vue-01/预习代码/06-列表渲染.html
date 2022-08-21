@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el:'.list',
+                data:{
+                    itemlist:[1,2,3,4],
+                    itemObj:{
+                        name:"霜霜",
+                        age:18
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <ul class="list">
+        <!-- <li v-for="item in itemlist">{{item}}</li> -->
+        <!-- <li v-for="(item,index) in itemlist">
+           {{index}} +++ {{item}}
+        </li> -->
+
+        <li v-for="(value,key) in itemObj">
+           {{key}} ++++ {{value}} 
+        </li>
+
+
+    </ul>
+</body>
+</html>

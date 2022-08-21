@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页 - 个人选股系统 V5.87</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/jquery-1.12.4.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  
+    <script>
+
+        $(function () {
+            
+            // 1.发送网络请求 请求 首页的 股票数据
+            $.ajax({
+                url:'http://localhost:7890/index_data',
+                type:'get',
+                dataType:'json',
+            })
+            // 请求数据成功
+            .done(function (dat) {
+                
+                // console.log(dat);
+                // 根据返回的数据 拼接
+                // 第一行表头
+                var sNewStr = '<tbody>'+' <tr><th>序号</th><th>股票代码</th><th>股票简称</th><th>涨跌幅</th><th>换手率</th><th>最新价(元)</th><th>前期高点</th><th>前期高点日期</th><th>添加自选</th></tr>'
+                
+                // 将剩下的 94行数据拼接
+                for (var i = 0; i < dat.length; i++) {
+                    var conData = dat[i];
+
+                    sNewStr += ' <tr><td>'+ conData.id + '</td>' 
+                                + '<td>' + conData.code + '</td>'
+                                + '<td>' + conData.sname + '</td>'
+                                + '<td>' + conData.rate01 + '</td>'
+                                + '<td>' + conData.rate02 + '</td>'
+                                + '<td>' + conData.new_prize + '</td>'
+                                + '<td>' + conData.date + '</td>'
+                                + '<td>' + conData.high + '</td>'
+                                + '<td><input type="button" value="添加" name="toAdd"></td></tr> '
+                                
+                    
+                }
+
+                // 整体赋值
+                $('.table').html(sNewStr+'</tbody>')
+
+                // 监听点击的按钮
+                $('.table').delegate('input','click',function () {
+                    // alert($(this).parent().siblings('td').eq(1).html())
+
+                    var sCode = $(this).parent().siblings('td').eq(1).html()
+                    // 发送关注按钮的 请求
+                    $.ajax({
+                        url:'http://localhost:7890/add_data',
+                        type:'get',
+                        dataType:'text',
+                        data:{code:sCode}
+                    })
+                    .done(function (dat,status) {
+                        alert( "数据:" + dat + "\n状态:" + status)
+                    })
+                    .fail(function () {
+                        alert('请求失败!');
+                    })
+                })
+            })
+        })
+        
+       
+    //    $(function(){
+    //       $.ajax({
+    //         url:'/index_data',
+    //         type:'get',
+    //         dataType:'json'
+    //       }).done(function(dat){
+
+    //          var sTr ='<tr><th>序号</th><th>股票代码</th><th>股票简称</th><th>涨跌幅</th><th>换手率</th><th>最新价(元)</th><th>前期高点</th><th>前期高点日期</th><th>添加自选</th></tr>';
+
+    //          for(var i=0;i<dat.length;i++)
+    //          {
+    //             sTr += '<tr><td>'+ dat[i].id +'</td><td>'+ dat[i].code +'</td><td>'+ dat[i].sname +'</td><td>'+ dat[i].rate01 +'</td><td>'+ dat[i].rate02 +'</td><td>'+ dat[i].new_prize +'</td><td>'+ dat[i].high +'</td><td>'+ dat[i].date +'</td><td><input type="button" value="添加" name="toAdd" systemidvaule="'+ dat[i].code +'"></td></tr>';
+    //          }
+    //          $('.table').html(sTr);
+             
+    //       }).fail(function(){
+    //          alert('服务器超时，请重试！');
+    //       })
+    //       $('.table').delegate('input','click',function(){
+    //             var sCode = $(this).attr('systemidvaule');
+    //             $.ajax({
+    //                 url:'/add_data',
+    //                 type:'get',
+    //                 dataType:'text',
+    //                 data:{'code':sCode}
+    //             }).done(function(dat,status){
+    //                 alert("数据: " + dat + "\n状态: " + status);
+    //             })
+    //       })
+    //    })
+      
+     
+       
+    </script>
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-static-top ">
+        <div class="container">
+        <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#mymenu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                 </button>
+                 <a href="#" class="navbar-brand">选股系统</a>
+        </div>
+        <div class="collapse navbar-collapse" id="mymenu">
+                <ul class="nav navbar-nav">
+                        <li class="active"><a href="">股票信息</a></li>
+                        <li><a href="/center.html">个人中心</a></li>
+                </ul>
+        </div>
+        </div>
+</div>
+<div class="container" id="container">
+
+    <div class="container-fluid">
+        <table class="table table-hover">           
+
+            
+            <tr><th>序号</th><th>股票代码</th><th>股票简称</th><th>涨跌幅</th><th>换手率</th><th>最新价(元)</th><th>前期高点</th><th>前期高点日期</th><th>添加自选</th></tr>
+            <tr><td>1</td><td>000007</td><td>全新好</td><td>10.01%</td><td>4.40%</td><td>全新好</td><td>16.05</td><td>2017-07-18</td><td><input type="button" value="添加" name="toAdd"></td></tr> 
+           
+
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>            

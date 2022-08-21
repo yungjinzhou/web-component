@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-相对定位</title>
+    <!-- 05-相对定位
+    
+    定位
+    相对    relative 参照物以 自己为基准, 占位置 
+    绝对    absolute
+    固定    fixed
+    无      static
+    -->
+
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        .red{
+            background-color: red;
+
+            /* 相对定位 */
+            position: relative;
+            top: 100px;
+            left:100px;
+        }
+        .green{
+            background-color: green;
+
+             /* 相对定位 */
+             position: relative;
+            top: 100px;
+            left:100px;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.red+div.green+div.blue -->
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    
+</body>
+</html>

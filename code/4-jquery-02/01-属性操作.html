@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-jquery的属性操作2</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            
+            var $input = $('input[type="button"]');
+            var $div = $('.box');
+
+            // 1.获取 标签自带的属性 prop
+            var sValue = $input.prop('value');
+            var sValue = $input.val();
+            var sClass = $div.prop('class');
+            console.log (sValue + "-----" + sClass);
+
+            // 2.写入
+            $input.prop(
+                {
+                    'value':"buttonBtn",
+                }
+            )
+
+            // 3.标签包裹的内容 js innerHTML == jquery .html()
+            // alert($div.html());
+            $div.html('新增的内容!');
+
+            // 了解 attr 自定义的属性
+            // alert($input.prop('renminbi'))
+            alert($input.attr('renminbi'))
+
+        })
+    </script>
+</head>
+<body>
+
+    <input type="button" value="普通的按钮" name="username" renminbi="20W">
+ 
+    <div class="box">
+            3.标签包裹的内容
+    </div>
+    
+</body>
+</html>

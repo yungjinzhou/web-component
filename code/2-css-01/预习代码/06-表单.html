@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-表单</title>
+    <style>
+        .box{
+
+            width: 500px;
+            height: 1000px;
+            border: 1px solid red;  
+
+            /* //居中 */
+            margin:50px auto 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 06-表单:提交用户输入的内容
+        
+        form
+    -->
+
+    <div class="box">
+
+            <!-- action:默认提交在当前网址; www.baidu.com -->
+            <!-- method 默认get post -->
+        <form action="" method="post">
+
+            <!-- 1.用户名  label标注提示-->
+            <p>
+                <label>用户名:</label>
+                <input type="text" name="username">
+            </p>
+
+            <!-- 2.密码 -->
+            <p>
+                <label>密&nbsp;&nbsp;&nbsp;码:</label>
+                <input type="password" name="pwd">
+            </p>
+
+            <!-- 3.性别 -->
+            <p>
+                <label>性&nbsp;&nbsp;&nbsp;别:</label>
+                <input type="radio" name="sex">男
+                <input type="radio" name="sex">女
+            </p>
+            <!-- 4.爱好 -->
+            <p>
+                <label>爱&nbsp;&nbsp;&nbsp;好:</label>
+                <input type="checkbox">游泳
+                <input type="checkbox">跑步
+                <input type="checkbox">妹子
+                <input type="checkbox">汉子
+            </p>
+            <!-- 5.玉照 -->
+            <p>
+                <label>玉&nbsp;&nbsp;&nbsp;照:</label>
+               <input type="file">
+            </p>
+            <!-- 6.籍贯 -->
+            <p>
+                <label>籍&nbsp;&nbsp;&nbsp;贯:</label>
+                <!-- 下拉列表 -->
+                <select name="address">
+                    <option value="" >北京</option>
+                    <option value="" selected="selected">上海</option>
+                    <option value="">广州
+                    </option>
+                    <option value="">深证</option>
+                </select>
+               
+            </p>
+            <!-- 7.个人描述 -->
+            <p>
+                <label>个人描述:</label>
+                <!-- 文本域  cols="30" rows="10"-->
+                <textarea name="" id=""></textarea>
+               
+            </p>
+            <!-- 8.提交 -->
+            <input type="submit" value="注册">
+
+            <!-- 9.重置 -->
+            <input type="reset">
+
+            <!-- 10.普通按钮 -->
+            <input type="button" value="普通按钮">
+
+            <!-- 隐藏域 -->
+            <input type="hidden" name="isvip">
+
+        </form>
+    </div>
+
+    
+</body>
+</html>

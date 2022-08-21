@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13-jquery的动画</title>
+    <style>
+        .box{
+            width: 0px;
+            height: 300px;
+            background: red;
+        }
+        .box1{
+            width: 0px;
+            height: 300px;
+            background: green;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery.color.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 动画; 动画属性,动画时长(毫秒),动画样式(先快后慢,先慢后快),动画结束的监听
+            // jquery 动画 对尺寸有作用  px结尾
+
+
+            // margin-top
+            // margin-left
+
+             $('.box').animate(
+                {
+                    "width":"1000px",
+                    "background-color":"green"
+                },
+                5000,
+                function () {
+                    $('.box').animate({"height":"500px"},2000)
+                   
+                }
+            )
+            
+            // $('.box').animate(
+            //     {
+            //         "width":"1000px",
+            //     },
+            //     5000,
+            //     "linear",
+            //     function () {
+            //         console.log('动画结束了!')
+            //     }
+            // )
+
+            // $('.box1').animate(
+            //     {
+            //         "width":"1000px",
+            //     },
+            //     5000,
+            //     "swing",
+            // )
+
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <div class="box1">
+
+        </div>
+</body>
+</html>

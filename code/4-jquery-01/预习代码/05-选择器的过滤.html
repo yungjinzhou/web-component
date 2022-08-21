@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-选择器的过滤</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+       $(function () {
+           
+
+            //1.has : 
+            // 有p标签的 div标签
+        var $div = $("div").has("p");
+           
+            //2.not: 取反; 出了类=five的DIV之外的所有div标签都选中
+            $div = $("div").not(".five");
+            // $div.css({"color":"red"}); 
+
+            //3.eq
+        var $div = $("div");
+           //选中的是第2个
+           $div.eq(1).css({"color":"red"});;
+
+
+       })
+    </script>
+</head>
+<body>
+
+    <div>文字内容1</div>
+    <div>文字内容2</div>
+    <div>文字内容3
+        <p>段落标签-子标签</p>
+    </div>
+    <div>文字内容4</div>
+    <div class="five">文字内容5</div>
+    <div>文字内容6</div>
+    
+</body>
+</html>

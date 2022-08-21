@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-vue的基本语法</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            
+            var vm = new Vue({
+                el:".box",
+                // 1.操作标签包裹的内容--数据
+                data:{
+                    linkname:"百度的链接",
+                    url:'http://www.taobao.com',
+                    counter:0,
+                    isVip:false,
+                    sOne:'1234567'
+                },
+                methods:{
+                    fnBtnCilick:function(){
+                        // alert('v-on 是vue操作事件的指令!')
+                        this.counter += 1
+                    }
+                }
+                // 2.操作标签的 属性 v-bind:属性="变量名字"
+
+                // 3.操作方法 v-on:
+                
+                // 4.表达式
+                // 直接计算
+                // 三目运算 三元运算 bool ? a : b
+                // js的链式操作 字符串的反转
+                // sOne.split("").reverse().join("")
+                
+
+            })
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="box">
+        <!-- 默认写法 -->
+        <!-- <a v-bind:href="url" target="_blank">{{linkname}}</a>
+        <input type="button" value="普通的按钮" v-on:click="fnBtnCilick"> -->
+
+        <!-- 简写 -->
+        <!-- <a :href="url" target="_blank">{{linkname}}</a>
+        <input type="button" value="普通的按钮" @click="fnBtnCilick"> -->
+
+        <a :href="url" target="_blank">{{linkname}}</a>
+        <input type="button" value="计数器" @click="fnBtnCilick">
+        <div>{{counter}}</div>
+        <div>{{isVip?"是的":"屌丝"}}</div>
+        <div>{{sOne.split("").reverse().join("")}}</div>
+
+    </div>
+</body>
+</html>

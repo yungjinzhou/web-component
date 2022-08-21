@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-css常用选择器2</title>
+
+    <style>
+        /* 1.第三度蓝色 */
+        /* .third{
+            color: blue
+        } */
+        /* ID 选择器  id唯一的*/
+        #three{
+            color:red;
+        }
+
+        /* 2. 7年后 斜体  粗体  绿色*/
+        /* p span{
+            color: green;
+        }
+        .seven{
+            font-style: italic;
+        }
+        p .love{
+            font-weight: bold;
+        } */
+        /* strong 重要的内容  自带加粗 */
+        /* 让不容的标签选择器 有相同的样式  --组选择器 并集选择器 */
+        span,strong{
+            color:green;
+            
+        }
+        p .seven{
+            font-style: italic;
+        }
+        /*3.伪类选择器
+        鼠标放上去的时候 改变字体的颜色  悬浮 hover
+
+        了解:
+        after
+        before
+          */
+        a:hover{
+            color:red;
+            font-size: 30px;
+        }
+        
+        /* 通过css的代码 增加内容 */
+        a:before{
+            content: "前面"
+        }
+        a:after{
+            content: "后面"
+        }
+    </style>
+</head>
+<body>
+
+        <a class="box" href="#">点击查看更多</a>
+
+        <i>专业名词</i>
+        <b>产品名称和关键字</b>
+        <p>
+
+                搜狐娱乐讯 <span class="seven">7年后</span> ，老友大银幕上再合作，
+                他们之间的角色关系是？杨幂和霍建华，对
+                《逆时营救》里两人的关系给出了对立又逗趣
+                的答案霍建华：相爱相杀。
+                杨幂： <strong>没有相爱，只有相杀</strong> 。
+            </p>
+    <!-- <p>
+
+        搜狐娱乐讯 <span class="seven">7年后</span> ，老友大银幕上再合作，
+        他们之间的角色关系是？杨幂和霍建华，对
+        《逆时营救》里两人的关系给出了对立又逗趣
+        的答案霍建华：相爱相杀。
+        杨幂： <span class="love">没有相爱，只有相杀</span> 。
+    </p> -->
+    <p >
+
+            搜狐娱乐讯 7年后，老友大银幕上再合作，他们之间的角色关系是？杨幂和霍建华，对《逆时营救》里两人的关系给出了对立又逗趣的答案霍建华：相爱相杀。杨幂：没有相爱，只有相杀。
+        </p>
+    <p class="third" id="three">
+
+            搜狐娱乐讯 7年后，老友大银幕上再合作，他们之间的角色关系是？杨幂和霍建华，对《逆时营救》里两人的关系给出了对立又逗趣的答案霍建华：相爱相杀。杨幂：没有相爱，只有相杀。
+        </p>
+</body>
+</html>

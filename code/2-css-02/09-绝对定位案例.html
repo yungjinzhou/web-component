@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-绝对定位案例</title>
+
+    <style>
+        .yellow{
+            width: 100px;
+            height: 100px;
+            background-color:gold;
+
+            margin: 100px auto;
+
+            position: relative;
+
+            /* 圆角矩形 */
+            border-radius: 10px;
+        }
+        .point{
+            width: 28px;
+            height: 28px;
+            background-color:red;
+
+            /* 绝对定位 */
+            position: absolute;
+            top:-14px; 
+            left:86px;
+
+            border-radius: 14px;
+            /*  */
+            text-align: center;
+            line-height: 28px;
+            color: white;
+
+            /* 透明度 */
+            opacity: 0.3;
+
+            /* 适配低版本的IE浏览器 */
+            /* filter: alpha(opacity=30) */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="yellow">
+        <div class="point">5</div>
+    </div>
+    
+</body>
+</html>

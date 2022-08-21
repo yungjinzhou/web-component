@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-封闭函数</title>
+    <script>
+        window.onload = function () {
+            
+            // 01-封闭函数
+            // (函数)();
+            // ~函数();
+            // !函数();
+
+            // 匿名函数 不可以单独定义
+            // 单独执行 -- 程序一 启动 就要执行的代码
+
+            // (function () {
+            //     alert('01-封闭函数')
+            // })();
+
+            // ~function () {
+            //     alert('01-封闭函数1')
+            // }();
+
+            !function () {
+                alert('01-封闭函数2222')
+            }();
+
+            // 2.接盘 老程序员写的代码 方法名字  小白接收了 坑能名字冲突
+            function fnAlert() {
+                alert('老程序员!')
+            }
+            fnAlert();
+
+            // 小白
+            (function fnAlert() {
+                alert('小白白!')
+            })();
+
+           
+
+            
+           
+        
+
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>18-选择器</title>
+    <!-- 寻找标签  选择器 -->
+
+    <style>
+        /* 1.标签选择器  一般不用 */
+        /* div{
+            color:red;
+        } */
+
+        /* 2. 类选择器  实际*/
+        /*.first{*/
+        /*   color:red;*/
+        /*}*/
+        
+        /* 3.层级选择器 后代选择器 嵌套 */
+        
+        div p{
+            color:green;
+        }
+
+        /*.second p{*/
+        /*    color:blueviolet;*/
+        /*}*/
+       
+
+    </style>
+</head>
+<body>
+
+    <div class="first">div的标签111</div>
+    <div>div的标签222</div>
+    <div>div的标签333</div>
+
+    <div class="second">
+        <p>
+            嵌套的标签
+        </p>
+        <div>
+            <p>
+                孙子标签
+            </p>
+        </div>
+    </div>
+
+    <p>标签</p>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-盒子真实宽高</title>
+    <style>
+    
+        .box{
+            width: 100px;
+            height: 120px;
+            background-color: red;
+
+            /* 真实宽高  指的 用户看到的大小 */
+            /* 边框 */
+            border-top:30px solid green;
+
+            /* 内边距 */
+            padding-left:50px;
+
+            margin: 100px;
+            /* 
+            真实宽度: 150== border的左右 + padding左右
+            真实高度: 150== border的上下 + padding上下
+             */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    
+</body>
+</html>

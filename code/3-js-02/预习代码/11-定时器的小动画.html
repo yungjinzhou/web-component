@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>11-定时器的小动画</title>
+
+    <style>
+       .box{
+           width: 200px;
+           height: 300px;
+           margin-top: 200px;
+           background: red;
+       }
+    </style>
+
+    <script>
+       window.onload = function () {
+           
+           //1.获取标签
+           var oDiv = document.getElementById("div1");
+
+           //2.margin-left
+           var iLeft = 0;//累加量
+           var iPosition = 5;//方向 正负有关系
+           function fnAnimation() {
+               iLeft += iPosition;
+               if (iLeft > 300) {
+                   //往左边
+                   iPosition = -5;
+               }
+
+               if (iLeft < 0) {
+                   //往右边
+                   iPosition = 5;
+               }
+                                //注意点: 单位不能少
+               oDiv.style.marginLeft = iLeft + "px";
+           }
+
+           //3.定时器
+           setInterval(fnAnimation,30);
+       }
+    
+    </script>
+</head>
+<body>
+
+    <div class="box" id="div1"></div>
+    
+</body>
+</html>

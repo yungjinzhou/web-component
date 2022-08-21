@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-click事件</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+       $(function () {
+           //1.获取 li
+           var $lis = $(".list li");//6
+
+           //2.监听 click 一次性 绑定6次click
+           $lis.click(function () {
+
+               //3.修改 color 
+               //this -- 操作的对象
+               // $(this) jquery的对象
+               // oDiv js对象
+               $(this).css({"color":"red"});
+
+               //获取角标
+               var iIndex = $(this).index();
+            //    alert(iIndex);
+
+
+                //了解 event 系统参数
+                // console.log(event);
+                // alert(event.type);
+                
+           })
+
+      
+
+           
+       })
+    </script>
+</head>
+<body>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li class="three">3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    
+</body>
+</html>

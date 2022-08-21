@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-jquery和原生对比</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        //  1.写的少 做的多
+        //  2.跑的快
+
+        // 原生js
+        // 浏览器加载完毕时机
+        window.onload = function () {
+            
+            var oDiv = document.getElementById('div1')
+
+            alert("原生js" + oDiv)
+        }
+
+        // jquery
+        // 文档加载完毕
+        $(document).ready(function () {
+            
+            var $div = $('#div1');
+
+            alert('jquery' + $div);
+        })
+
+        // 简写
+        $(function () {
+            var $div = $('#div1');
+
+            alert('jquery' + $div);
+        })
+
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

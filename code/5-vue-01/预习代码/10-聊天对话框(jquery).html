@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .talk_con{
+            width:600px;
+            height:500px;
+            border:1px solid #666;
+            margin:50px auto 0;
+            background:#f9f9f9;
+        }
+        .talk_show{
+            width:580px;
+            height:420px;
+            border:1px solid #666;
+            background:#fff;
+            margin:10px auto 0;
+            overflow:auto;
+        }
+        .talk_input{
+            width:580px;
+            margin:10px auto 0;
+        }
+        .whotalk{
+            width:80px;
+            height:30px;
+            float:left;
+            outline:none;
+        }
+        .talk_word{
+            width:420px;
+            height:26px;
+            padding:0px;
+            float:left;
+            margin-left:10px;
+            outline:none;
+            text-indent:10px;
+        }        
+        .talk_sub{
+            width:56px;
+            height:30px;
+            float:left;
+            margin-left:10px;
+        }
+        .atalk{
+           margin:10px; 
+        }
+        .atalk span{
+            display:inline-block;
+            background:#0181cc;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+        .btalk{
+            margin:10px;
+            text-align:right;
+        }
+        .btalk span{
+            display:inline-block;
+            background:#ef8201;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el:'.talk_con',
+                data:{
+                    judgeWho:"A",
+                    tablkContent:"",
+                    contentList:[
+                        {who:"A",content:"你吃饭了没?"},
+                        {who:"B",content:"没有呢,你请?"},
+                    ]
+                },
+                methods:{
+                    fnSendCilick:function(){
+                        if (this.tablkContent == "") {
+                            alert('请输入内容!')
+                            return
+                        }
+                        newdata = {
+                            who:this.judgeWho,
+                            content:this.tablkContent
+                        }
+
+                        this.contentList.push(newdata)
+
+                        this.tablkContent = ""
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="talk_con">
+
+        <!--1.对话框-->
+        <div class="talk_show" id="words">
+            <div v-for="item in contentList" :class="(item.who == 'A')?'atalk':'btalk'">
+                    <span>{{item.who}}说:{{item.content}}</span>
+            </div>
+
+        </div>
+
+        <!--2.选择人和 输入内容和发送-->
+        <div class="talk_input">
+            <select class="whotalk" id="who" v-model="judgeWho">
+                <option value="A">A说：</option>
+                <option value="B">B说：</option>
+            </select>
+            <input type="text" class="talk_word" id="talkwords" v-model="tablkContent">
+            <input type="button" value="发送" class="talk_sub" id="talksub" @click="fnSendCilick">
+        </div>
+    </div>
+</body>
+</html>

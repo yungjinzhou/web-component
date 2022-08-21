@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-javascript的变量类型</title>
+
+    <script>
+        // 05-javascript的变量类型
+
+        // 查看数据类型
+        // typeof()
+
+        // 1.基本数据类型
+        // 1.1数字类型 number
+        var iNumber = 100;
+      
+        // 1.2字符串类型 string
+        var sStr = "黑马14";
+       
+        // 1.3布尔型 true false;   boolean
+        var bIsTrue = true;
+        
+    
+        // 1.4undefined 未定义
+        var unDef = undefined;
+        
+        // 1.5 null  空类型
+        // object ECMA5.0 --->空对象
+        //        ECMA6.0  有人提议 改过来    遗留的BUG太多了,不改了
+        var nullData = null;
+        //alert(typeof(nullData));
+
+        //2.复合类型 object
+        var oObj = {
+            name:"张山",
+            age:16,
+        }
+        alert(typeof(oObj));
+        alert(oObj.name);
+
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

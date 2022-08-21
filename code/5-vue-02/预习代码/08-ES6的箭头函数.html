@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+                
+                //   函数
+                // function fnTest(){
+
+                // }
+
+                // var fnTest = function (){
+                //     alert('fntest');
+                // }
+
+                //  var fnTest = function (a){
+                //     alert(a);
+                // }
+
+                // var fnTest = function (a,b){
+                //     alert(a + b);
+                // }
+
+                // ES6 箭头函数
+                // 最大好处 可以指向 当前操作的对象
+                var fnTest = ()=>{
+                    alert('箭头函数 没有参数')
+                }
+                var fnTest = a=>{
+                    alert(a)
+                }
+                var fnTest = (a,b)=>{
+                    alert(a + b)
+                }
+                
+                 // 最大好处 可以指向 当前操作的对象
+                var oOne = {
+                    name:"张三",
+                    fnAlert:function(){
+                        setTimeout(()=> {
+                            // 通过箭头函数 将this指向  改成 js对象
+                            alert(this.name)
+                        }, 1000);
+                    }
+                }
+
+                oOne.fnAlert()
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+    
+    
+    
+        </div>
+        
+    </body>
+    </html>

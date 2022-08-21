@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-条件渲染</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el:'.box',
+                data:{
+                    show:3,
+                    isHow:false
+                },
+
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <!-- <p v-if="show">第一个标签</p>
+        <p v-else>2222个标签</p> -->
+
+        <p v-if="show==1">第一个标签</p>
+        <p v-else-if="show==2">2222个标签</p>
+        <p v-else-if="show==3">333个标签</p>
+        
+        <!-- 标签隐藏 设置的是display:none -->
+        <p v-show="isHow">vSHow的使用</p>
+    </div>
+</body>
+</html>

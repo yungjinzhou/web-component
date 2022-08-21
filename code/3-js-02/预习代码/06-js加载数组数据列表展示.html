@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-js加载数组数据列表展示</title>
+    <style>
+       .list{
+           width: 500px;
+           /* height: 500px; */
+           border: 1px solid lightgray;
+           margin: 0 auto;
+
+           /* overflow: auto; */
+       }
+       .list li{
+           height: 50px;
+           border-bottom: 1px  dotted lightgray;
+           line-height: 50px;
+       }
+    </style>
+    <script>
+        window.onload = function () {
+            
+            //1.获取列表
+            var oList = document.getElementById("ullist");
+
+            //2.数组的数据
+            var aDataArray = ["追龙","英伦对决","空天猎","杀手的保镖"];
+
+            //3.替换 赋值
+            var sStr = "";
+            for (var i = 0; i < aDataArray.length; i++) {
+                var sContent = aDataArray[i];
+
+                //拼接标签
+                sStr += "<li>" + sContent + "</li>";
+
+            }
+
+            //赋值
+            oList.innerHTML = sStr;
+
+        }
+    
+    </script>
+</head>
+<body>
+
+    <ul class="list" id="ullist">
+       
+    </ul>
+    
+</body>
+</html>

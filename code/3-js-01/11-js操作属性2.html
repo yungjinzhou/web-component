@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性操作2 [ ]</title>
+
+    <script>
+        window.onload = function () {
+            
+            // 1.获取标签
+            var oDiv = document.getElementById('box')
+
+            // 2. 修改文字的大小
+            // oDiv.style.fontSize = "50px";
+
+            // 3. [ ]
+            var sSize = "red";
+            var sFontSize = "color";
+            // 错误的写法
+            // oDiv.style.sFontSize = sSize;
+
+            //  自己写的变量  让系统识别成 属性
+            oDiv.style[sFontSize]= sSize;
+        }
+    </script>
+
+</head>
+<body>
+
+    <div id="box">
+        div的文字
+    </div>
+    
+</body>
+</html>

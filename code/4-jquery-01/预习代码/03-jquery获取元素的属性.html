@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-jquery获取元素的属性</title>
+
+    <style>
+       .box{
+           width: 200px;
+           height: 300px;
+           background: red;
+       }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            //约定俗成
+            // $div 修饰标签对象
+            //其他还是 匈牙利的风格
+            var $div = $("#div1");
+
+            //1.获取属性
+            var sWidth = $div.css("width");
+            var sFontSize = $div.css("font-size");
+            // alert(sFontSize);
+
+            //2.设置属性
+            $div.css({
+                "color":"green",
+                "background-color":"gold",
+                "width":"100px"
+            });
+
+
+        })
+        
+    </script>
+</head>
+<body>
+    <!-- div.box#div1 -->
+    <div class="box" id="div1">jquery获取元素的属性</div>
+    
+</body>
+</html>

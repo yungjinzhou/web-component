@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+                
+                // 想将 main.js中 student对象 导入现在文件
+
+                // 1. 先在 main.js导出
+                export default {student}
+
+                // 2.再导入
+                import student from './js/man.js'
+
+
+                // 第二种写法
+                export {student}
+                import {student} from './js/man.js'
+
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+    
+    
+    
+        </div>
+        
+    </body>
+    </html>

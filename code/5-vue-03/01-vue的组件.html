@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <style>
+        .app{
+            background: red;
+            color: green;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            // 组件
+            Vue.component('div-com',{
+                props:['content'],
+                template:'<div  @click="fnClick" class="app"> <span>{{content}}</span> 这是文件内的组件 </div>',
+
+                methods:{
+                    fnClick:function (){
+                        alert('这是文件内的组件')
+                    }
+                },
+                data: function () {
+                    return {
+                        content:'设置模板变量'
+                    }
+                }
+            })
+            
+            var vm = new Vue({
+                el:'.box'
+            })
+        }
+    </script>
+</head>
+<body>
+
+    <div class="box">
+        <div-com content="这是Vue的文件内部的组件"></div-com>
+
+    </div>
+    
+</body>
+</html>

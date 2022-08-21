@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-js操作属性1</title>
+
+    <script>
+        // 1.加载完毕的时机
+        window.onload = function () {
+            // 1.获取标签
+            var oBtn = document.getElementById('btn');
+
+            // 2. 读取属性 点语法
+            var sValue = oBtn.value;
+            var sType  = oBtn.type;
+
+            // class -->className
+            var sClass = oBtn.className;
+
+            // 获取文字颜色
+            var sColor = oBtn.style.color;
+            
+            // background-color --backgroundColor
+            //  font-size --- fontSize
+            var sBgColor = oBtn.style.backgroundColor;
+
+            alert(sColor)
+
+            // 3. 写入属性
+            // 修改文字的颜色 蓝色
+            oBtn.style.color = "blue";
+
+            // 修改背景颜色
+            // oBtn.style.backgroundColor = "gold";
+            
+        }
+
+    </script>
+</head>
+<body>
+
+    <input type="button" class="test" id="btn" value="普通的按钮" >
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-双向绑定数据v-model</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            
+            var vm = new Vue({
+                el:'.box',
+                data:{
+                    content:"123",
+                    address:"上海",
+                    gender:'女',
+                    like:[]
+                }
+               
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <!-- 多选框 -->
+        <input type="checkbox" name="like" value="游泳" v-model="like">游泳
+        <input type="checkbox" name="like" value="健身" v-model="like">健身
+        <input type="checkbox" name="like" value="写代码" v-model="like">写代码
+        <input type="checkbox" name="like" value="睡觉" v-model="like">睡觉
+        <p>您的爱好是: {{like}}</p>
+
+        <!-- 单选框 -->
+        <input type="radio" name="sex" value="男" v-model="gender">男
+        <input type="radio" name="sex" value="女" v-model="gender">女
+        <p>您的性别是: {{gender}}</p>
+
+        <!-- 下拉列表 -->
+        <select name="" id="" v-model="address">
+            <option value="北京">北京</option>
+            <option value="上海">上海</option>
+            <option value="广州">广州</option>
+            <option value="深圳">深圳</option>
+        </select>
+        <p>您的地址是: {{address}}</p>
+
+        <input type="text" v-model="content">
+        <p>{{content}}</p>
+    </div>
+    
+</body>
+</html>

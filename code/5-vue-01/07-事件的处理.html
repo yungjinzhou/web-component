@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-事件的处理</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            
+            var vm = new Vue({
+                el:'.box',
+                data:{
+
+                },
+                methods:{
+                    fnFather:function(){
+                        alert('father');
+                        
+                    },
+                    fnSon:function(){
+                        alert('son');
+
+                    },
+                    fnSubmit:function(){
+                        alert('提交事件');
+                    },
+                    fnBtnSub:function () {
+                        alert('提交按钮点击')
+                    }
+
+                }
+
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <!-- 阻止默认的提交事件 -->
+        <!-- <form action="" @submit.prevent="fnSubmit"> -->
+            <form action="">
+            <input type="text" name="user">
+            <input type="submit" @click.prevent="fnBtnSub">            
+
+        </form>
+
+        <!-- 阻止事件的传递 @click.stop-->
+        <div @click="fnFather" class="father" style="background:red">
+            father
+            <div @click.stop="fnSon" class="son" style="background:green">son</div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-相对定位</title>
+    <!-- 05-相对定位
+
+        文档流标准流: 概念: 行内元素  排成一行
+                          块元素  霸占一行
+                          浮动 
+                          只要按照html标准类 布的界面 局; 
+    定位
+    相对    relative 参照物以 自己为基准, 占位置 
+    绝对    absolute 参照物 以父元素为基准(父元素必须设置定位), 脱离文档流, 不占位置
+    固定    fixed
+    无      static
+    -->
+
+    <style>
+     
+        .red{
+            border:1px solid red;
+            width: 500px;
+            height: 500px;
+
+
+            margin: 0  auto;
+            /* 设置定位 */
+            position: relative;
+           
+        }
+        .green{
+
+             width: 100px;
+            height: 100px;
+            background-color: green;
+
+            /* 绝对定位 */
+            position: absolute;
+            top: 100px;
+            left: 100px;
+
+            /* 透明 0-1*/
+            opacity: 0.3;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- div.red+div.green+div.blue -->
+    <div class="red">
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+            <a href="">里面的内容</a>
+         
+            <div class="green"></div>
+
+            <p>段落</p>
+    </div>
+
+    <p style="background-color: green">段落</p>
+    
+   
+    
+</body>
+</html>

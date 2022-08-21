@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-table的基本操作</title>
+
+    <style>
+        .tblist{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+
+            /* //合并边框 */
+            border-collapse: collapse;
+
+            /* //了解属性 */
+            /* border-collapse: separate;
+            border-spacing: 10px 20px; */
+        }
+        .tblist td{
+            border: 1px solid black;
+
+            /* //文字水平居中 */
+            text-align: right;
+
+            /* //文字垂直居中
+                top  center bottom
+             */
+            vertical-align: bottom;
+           
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- 01-table的基本操作
+    table
+
+    tr table  row 行数
+
+        th table  head 头标题   默认加粗 居中显示
+        td 内容
+
+
+        跨列合并  找到第几行的第几个 col–span 
+        跨行合并 找到第几行的第几个  rowspan
+    -->
+      
+    <table class="tblist">
+        <!-- //第一行 -->
+        <tr>
+           <th colspan="2">1</th> 
+           
+           <td>3</td> 
+        </tr>
+
+         <!-- //第二行 -->
+        <tr>
+            <td>1</td>
+            <td rowspan="2">2</td>
+            <td>3</td>
+        </tr>
+         <!-- //第三行 -->
+        <tr>
+            <td>1</td>
+            
+            <td>3</td>
+        </tr>
+    </table>
+
+
+      <!-- //用的标签 自带的属性 最原始的写法
+        
+            width
+            height
+            border:1px;
+            cellspacing:0;
+            cellpadding:0
+        -->
+    
+</body>
+</html>

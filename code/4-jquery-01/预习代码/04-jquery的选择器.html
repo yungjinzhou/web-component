@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-jquery的选择器</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+           $(document).ready(function () {
+               
+                    /*
+                6个
+                标签
+                ID
+                类
+                层级选择
+                属性选择器
+
+                */
+
+                //1.标签选择器
+                var $div = $("div");
+
+                //2.类选择器
+                $div = $(".box3");
+                
+                //3.ID
+                $div = $("#div2");
+                
+                //4.层级选择器
+                var $p = $(".box2 p");
+                
+                //5.属性选择器
+                
+                var $propertyDiv = $("div[class = 'box']");
+                $propertyDiv.css({"color":"pink"});
+                // alert($div);
+
+                
+
+                //判断 jquery 获取标签对象 是否有 还是没有 --- length
+                // length ===0  代表没有
+                // 个数  代表的标签有几个
+                var $abc = $(".abc");
+                alert($("p").length);
+
+
+                //了解
+                // class 宽泛
+                // class ^= "a" 以开头
+                // class $= "b" 以b 结尾
+                // class *= "c" ,凡是有C 都选中
+           })
+
+            
+    
+    </script>
+</head>
+<body>
+    <div class="box" >文字内容1</div>
+    <div class="box1" id="div2">文字内容2</div>
+    <div class="box2">文字内容3
+
+        <p>段落标签</p>
+    </div>
+    <div class="box3">文字内容4</div>
+    <div class="box4">文字内容5</div>
+    <div class="box5">文字内容6</div>
+    
+</body>
+</html>

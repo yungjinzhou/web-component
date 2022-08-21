@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10-今日头条</title>
+
+    <style>
+        /* 1.最外侧 宽高 边框  */
+        .box{
+            width: 285px;
+            height: 310px;
+
+            /* 上下边框 */
+            border-top: 1px solid red;
+            border-bottom: 1px solid red;
+        }
+        /* 2. 头部的 div高度 40px */
+        .head{
+            height: 40px;
+            /* width: 285px; */
+        }
+        /* 2.1 今日头条   */
+        .head h3{
+            font-size: 16px;
+            font-family: "Microsoft YaHei";
+            color: #172c45;
+
+            /* 左边浮动 */
+            float: left;
+
+            /* 由于 自带的margin的边距 影响了现在的布局 , 删除 */
+            margin: 0px;
+            line-height: 40px;
+        }
+        /* 2.2 更多 */
+        .head a{
+            font-size: 12px;
+            font-family: 'Microsoft YaHei';
+            color: #172c45;
+
+            /* 去掉下划线 */
+            text-decoration: none;
+            /* 右边浮动 */
+            float: right;
+
+            /* 垂直居中 */
+            line-height:  40px;
+        }
+        /* 3.img */
+        /* 4.段落标签 */
+        .box p{
+            font-size: 12px;
+            font-family: "Microsoft YaHei";
+            color: #737373;
+
+            /* 行高 */
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1.最外侧 div -->
+    <div class='box'>
+        <!-- 2.头部 div > h3 + a -->
+        <div class="head">
+            <h3>今日头条</h3>
+            <a href="#">更多>&gt;</a>
+        </div>
+        <!-- 3.img -->
+        <img src="images/banner.jpg" alt="计算机" title="计算机">
+        <!-- 4.p -->
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人工智能（Artificial Intelligence），英文缩写为AI。它是研究、开发用于模拟、延伸和扩展人的智能的理论、方法、技术及应用系统的一门新的技术科学。 人工智能是计算机科学的一个分支，它企图了解智能的实质，并生产出一种新的能以人类智能相似的方式做出反应的智能机器，该领域的研究包括机器人、语言识别、图像识别、自然语言处理和专家系统等.
+        </p>
+
+    </div>
+    
+</body>
+</html>

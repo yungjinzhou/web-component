@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>16-CSS的属性margin</title>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+            /* 外边距 */
+            margin-top:30px;
+            margin-left:100px;
+            margin-right: 100px;
+            margin-bottom: 100px;
+
+
+            /* 连写 */
+            margin:40px;
+                    /* 上下  左右 */
+            margin:10px 20px;
+                    /* 上   左右  下 */
+            margin:10px 20px 30px;
+            /* 顺时针  上   右  下 左 */
+            margin:10px 20px 30px  40px;
+
+
+            /* 元素(标签 标记)水平居中 */
+            /* margin:0 600px; */
+            /* 系统自动计算 */
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- div*2 -->
+    <div>DIV第一个</div>
+    <div>DIV第2个</div>
+    
+</body>
+</html>

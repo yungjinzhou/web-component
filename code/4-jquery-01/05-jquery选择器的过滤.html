@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-jquery选择器的过滤</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            // 过滤 5个
+            var $divs = $('div');
+
+            // 1.has 当前选中的这个标签 里面有什么(判断条件)
+            var $div = $divs.has('p');
+
+            // 2.not 取反, 除了这个标签之外的 其他所有标签
+            var $div = $divs.not('.box')
+
+            // 3.eq  相等, 角标 4
+            var $div = $divs.eq(3)
+            
+            $div.css({"color":'red'})
+        })
+    </script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div class="box">3</div>
+    <div>4</div>
+    <div>5
+        <p>段落</p>
+    </div>
+
+    <a href="">链接</a>
+    
+</body>
+</html>

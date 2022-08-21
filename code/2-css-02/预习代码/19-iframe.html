@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>嵌套页面</title>
+    <style>
+        iframe{
+            width: 50%;
+            height: 500px;
+            background: green;
+        }
+
+        .box{
+            width: 80%;
+            height: 800px;
+            margin: 0 auto;
+            border: 2px solid red;
+        }
+
+        .list {
+            float: left;;
+            width: 100px;
+
+        }
+        
+        .right{
+            float: right;
+            width: 80%;
+            height: 800px;
+            background: lightcoral;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <iframe src="./02-table的案例.html" frameborder="0" class="baidu" ></iframe>
+    <!-- <iframe src="http://www.taobao.com" class="taobao"></iframe> -->
+
+    <div class="box">
+        <ul class="list">
+            <li><a href="http://www.baidu.com" target="hah">链接1</a></li>
+            <li><a href="http://www.taobao.com" target="hah">链接2</a></li>
+            <li><a href="http://box.baobao.sohu.com/yuchanqi" target="hah">链接3</a></li>
+        </ul>
+        <iframe src="" frameborder="0" class="right" name="hah" ></iframe>
+    </div>
+    
+</body>
+</html>

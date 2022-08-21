@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-选择器的提升</title>
+
+    <style>
+        .box{
+
+            width: 1000px;
+            height: 800px;
+            border: 1px solid red;
+        }
+
+        /* ID选择器  id是唯一的; js交互*/
+        #third{
+            color: blue;
+        }
+
+  
+        /* 新的标签:strong 表示重要的事情 */
+        /* 并集选择器  组选择器 */
+
+        span,strong{
+
+           color: green; 
+        }
+
+        .box a{
+
+            text-decoration: none;
+        }
+
+        /* hover 伪类元素的一种 最常用, 鼠标悬浮 */
+        .box a:hover{
+
+            color: orange;
+        }
+    
+        
+        .box a:after{
+
+            content: "从后面添加内容";
+        }
+
+        .box a:before{
+
+            content: "前面添加内容";
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+
+        <p class="first">
+
+            搜狐娱乐讯 <span>7年后</span>，老友大银幕上再合作，他们之间的角色关系是？杨幂和霍建华，对《逆时营救》里两人的关
+            系给出了对立又逗趣的答案霍建华：相爱相杀。杨幂：<strong>没有相爱，只有相杀。</strong>
+        </p>
+
+        <p>
+            《逆时营救》中，杨幂为营救被霍建华绑架的儿子，利用粒子传送器逆转时空，回到过去，却造成同一时空出现“三个杨幂”的奇观。三个杨幂状态各不相同，特辑中，杨幂也对三个杨幂的性格进行剖析，“1号杨幂会害怕，所以还会流泪。2号杨幂比较理智和克制。3号杨幂经历的伤害更多，性格有点疯癫和变态。”三个杨幂同框夺人眼球，而三个杨幂与霍建华的对手戏更是备受关注，戏中杨幂霍建华只相杀不相爱，戏外二人也是同样互怼，杨幂也不忘调侃华哥“太不友好”：“（华哥）这个人不友好，不想跟他做朋友了（笑）。电影里面有挺多打戏的，一直是他打我，而且还是打三次。这一次的动作戏都是真实的肉打肉的那种，很过瘾。”
+        </p>
+
+        <p id="third">
+            从《仙剑三》到剧版《三生三世》，再到即将上映的《逆时营救》，杨幂经常在作品中挑战一人分饰多个角色的戏份，谈及是不是对此类角色有所钟情，杨幂坦言有突破才是最重要的：“也不是很经常啦（笑），我觉得演起来会很爽，像《三生》里面演的最爽的是演玄女的时候，因为跟自己完全不一样。《逆时营救》这次是三个性格差异很大，挺好玩的。”
+        </p>
+
+        <a href="">想查看更多内容请点击</a>
+    </div>
+    
+</body>
+</html>

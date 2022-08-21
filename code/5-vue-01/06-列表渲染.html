@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue的基本使用</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            
+           var vm  = new Vue({
+               el:'.box',
+                data:{
+                    itemList:[1,2,3,4,5,6],
+                    indexList:["A","B","C","D"],
+                    objData:{
+                        name:'马云'
+                    },
+                    dataList:[
+                        {
+                            name:"张一鸣",
+                            age:'60'
+                        }, {
+                            name:"马化腾",
+                            age:'16'
+                        },
+                    ]
+                }
+
+           })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <!-- <div v-for="item in itemList">{{item}}</div> -->
+
+        <ul class="list">
+            <!-- 列表渲染 -->
+            <li v-for="item in itemList">{{item}}</li>
+
+
+
+            
+            <li v-for="(item,index) in indexList">
+                {{index}} ------- {{item}}
+            </li>
+
+            <!-- 2.只有一个对象 -->
+            <li v-for="obj in objData">
+                {{obj}}
+            </li>
+            <li v-for="(obj,key) in objData">
+                  {{key}}--------{{obj}}
+            </li>
+
+            <!-- 3.批量的对象集合 -->
+            <li v-for="dataObj in  dataList">
+                {{dataObj.name}} ----- {{dataObj.age}}
+            </li>
+        </ul>
+
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>17-绝对定位案例图标</title>
+    <style>
+        .box{
+            background-color: gold;
+            width: 100px;
+            height: 100px;
+
+            margin:100px auto 0;
+
+            /* //相对定位 */
+            position: relative;
+
+            /* 设置圆角 */
+            border-radius: 10px;
+
+      
+        }
+        .red{
+            background-color: red;
+            width: 28px;
+            height: 28px;
+            color: white;
+
+            /* 1.相对定位 以自身为准,移动之后站位置 */
+            /* position: relative;
+            left: 86px;
+            top: -14px; */
+
+            /* 2.绝对定位 */
+            position: absolute;
+            left: 86px;
+            top:-14px;
+
+            line-height: 28px;
+            text-align: center;
+            /* //设置圆角 */
+            border-radius: 14px;
+            /* //2.设置透明度 */
+            opacity: 0.3;
+            /* 兼容IE浏览器 */
+            filter:alpha(opacity=30);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="red">5</div>
+    </div>
+    
+</body>
+</html>

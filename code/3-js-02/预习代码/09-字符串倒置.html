@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+       window.onload = function () {
+           
+           var sOne = "123456";
+           //数组有倒置方法
+
+           //1.转换 数组
+           var aOneArray = sOne.split("");
+           //2. 数组倒置
+           var aNewArray = aOneArray.reverse();
+           //3. 数组转换字符串
+           var sNew = aNewArray.join("");
+
+           //连写 链式
+           sNew = sOne.split("").reverse().join("");
+           alert(sNew);
+       }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

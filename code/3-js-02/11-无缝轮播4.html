@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片轮播器的功能实现</title>
+
+    <style>
+
+        /*初始化*/
+        ul,li{
+            margin: 0;
+            padding: 0;
+        }
+
+        /*1.设置图片的外边框*/
+        .picbox{
+
+            width: 1000px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 10px auto 0;
+            background-color: lightgray;
+
+            overflow: hidden;
+            position:relative;
+        }
+        /*2.设置列表的属性*/
+        .list{
+
+            list-style: none;
+            width: 2000px;/*暂时写1000px,修改为2000是为了轮播做准备*/
+            height: 200px;
+
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+        /*3.设置li标签的属性*/
+
+        .list li{
+            width: 180px;
+            height: 180px;
+            margin: 10px;
+            float: left;
+        }
+
+        /*4.设置按钮边框的属性*/
+        .btn{
+            width: 1000px;
+            height: 50px;
+            background: pink;
+            margin: 50px auto 0;
+
+            position: relative;
+
+        }
+        /*5.设置左右两个按钮的大小位置等*/
+        .left,.right{
+
+            width: 30px;
+            height: 30px;
+            background-color: gold;
+
+            line-height: 30px;
+            text-align: center;
+            font-family: "Arial";
+            font-size: 30px;
+
+            /*裁剪圆角*/
+            border-radius: 15px;
+
+            /* //鼠标的样式 */
+            cursor: pointer;
+
+            /* //透明度 */
+            opacity: 0.5;
+
+            /*定位*/
+            position: absolute;
+            left:-40px;
+            top:124px;
+        }
+
+        /*6.单独设置右边按钮的位置*/
+        .right{
+            left:1010px;
+            top:124px;
+        }
+
+    </style>
+
+    <script>    
+    
+        window.onload = function (){
+
+            // 1.获取标签
+            var oList = document.getElementById('list'),
+
+            // 左右按钮
+            oLeftBtn = document.getElementById('left'),
+            oRightBtn = document.getElementById('right'),
+
+            // 轮播图的框
+            oBox = document.getElementById('pic');
+
+
+          
+        //   将滚动的图片 复制成两份
+        // oList.innerHTML * 2 "字符安" * 2
+        // oList.innerHTML = oList.innerHTML + oList.innerHTML;
+        oList.innerHTML += oList.innerHTML;
+
+          // 2.修改left
+         //   累加量的白能量
+         var iSpeed = 0;
+        //  方向
+        var iDirection = -5;
+          function fnAnimation() {
+              iSpeed += iDirection;
+
+            //   判断 首尾相接的条件,成立 改的位置 
+            if ( iSpeed < -1000) {
+                iSpeed = 0;
+            }
+
+            // 右边 ,大于0 ; 
+            if (iSpeed > 0) {
+                iSpeed = -1000;
+            }
+
+            // 修改left
+            oList.style.left = iSpeed + 'px';
+
+            console.log("定时器一直在执行....")
+          }
+          // 3.反复执行的定时器
+         var timer = setInterval(fnAnimation,30);
+
+         // 4.监听左右按钮的点击事件 改变的方向
+         oLeftBtn.onclick = function () {
+            //  左边
+            iDirection = -2;
+         }
+         oRightBtn.onclick = function () {
+            // 右边
+            iDirection = 2;
+        }
+
+
+         // 5.监听鼠标的事件 onmouse
+        oBox.onmouseover = function () {
+            // 关闭定时器
+            clearInterval(timer);
+        }
+        oBox.onmouseout = function () {
+            
+            // 开启定时器
+            timer = setInterval(fnAnimation,30);
+        }
+
+
+
+        //  记录动画停止 之前 的 速度和方向
+        // var upIdirection = 0;
+        //  oBox.onmouseover = function () {
+        //     //  记录
+        //     upIdirection = iDirection;
+        //     //  鼠标放上去动画 停止
+        //     iDirection = 0;
+        //  }
+
+        // oBox.onmouseout = function () {
+        //       //  鼠标移开 动画 开启
+        //       iDirection = upIdirection;
+        // }
+
+        }
+    </script>
+
+
+   
+    
+
+
+   
+
+</head>
+<body>
+
+    <div class="btn">
+        <div class="left" id="left">&lt;</div>
+        <div class="right" id="right">&gt;</div>
+    </div>
+
+    <div class="picbox" id="pic">
+
+        <ul class="list" id="list">
+            <li><a href=""></a><img src="images/goods001.jpg" alt="商品图片"></li>
+            <li><a href=""></a><img src="images/goods002.jpg" alt="商品图片"></li>
+            <li><a href=""></a><img src="images/goods003.jpg" alt="商品图片"></li>
+            <li><a href=""></a><img src="images/goods004.jpg" alt="商品图片"></li>
+            <li><a href=""></a><img src="images/goods005.jpg" alt="商品图片"></li>
+           
+        </ul>
+
+    </div>
+    
+
+</body>
+</html>

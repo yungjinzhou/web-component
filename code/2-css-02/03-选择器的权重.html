@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doc03-选择器的权重ument</title>
+    <!-- 03-选择器的权重
+        选择器               权重占比
+        标签                    1
+        类                      10
+        ID                      100
+        行内式                  1000
+        !important              10000(提升的属性的权重)
+    -->
+    <style>
+        /* .pra{
+            color:red !important;
+            font-size: 10px;
+        }
+        p{
+            color:green;
+        }
+        #first{
+            color:blue;
+            font-size: 50px;
+        } */
+        /* 1 1  1 = 3 */
+        div div div{
+            color: red;
+        }
+        /* 100 + 10 + 100 =210 */
+         #first .father #third{
+            color: goldenrod;
+        }
+        /* 10 + 1 + 100 =111 */
+        .grandfather div #third{
+            color: green;
+        }
+        /* 10 + 100+1 = 111 */
+        .grandfather #second div{
+            color:blue;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="grandfather" id="first">
+        <div class="father" id="second">
+            <div class="son" id="third">
+                son
+            </div>
+        </div>
+    </div>
+
+    <!-- <p class="pra" id="first" style="color:goldenrod">段落标签</p> -->
+    
+</body>
+</html>

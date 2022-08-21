@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+                
+                // 1.js原生对象
+
+                
+
+                // var oOne = new Object();
+                // oOne.name = "张三";
+                // oOne.age = 16;
+                // oOne.fnAlert = function () {
+                //     alert('js原生对象的写法')
+                // }
+                // oOne.fnAlert();
+
+                // var oOne = {
+                //     name:"张三",
+                //     age:16,
+                //     fnAlert:function(){
+                //         alert('js原生对象的写法')
+                //     }
+                // }
+
+
+                // 2.ES6 简写  变量 和 属性的值是一致的
+                let name = "老王";
+                let age = 18;
+
+                var oOne = {
+                    name,
+                    age,
+                    fnAlert:function(){
+
+                        alert(this.name)
+                    }
+                }
+
+                oOne.fnAlert()
+
+
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+    
+    
+    
+        </div>
+        
+    </body>
+    </html>

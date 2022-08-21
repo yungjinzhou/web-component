@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>15-封闭函数</title>
+    <script>
+        window.onload = function () {
+            
+            //1.匿名函数 不能单独定义
+            // function () {
+            //     alert("匿名函数");
+            // }
+            (function () {
+                //alert("封闭函数");
+            })();
+
+            ~function () {
+                //alert("封闭函数2");
+            }();
+            !function () {
+                //alert("封闭函数3");
+            }();
+
+            //2.作用; 名字一样的函数
+            function fnAlert() {
+                alert("11111");
+            }
+            fnAlert();
+
+            (function fnAlert() {
+                alert("2222");
+            })();
+
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

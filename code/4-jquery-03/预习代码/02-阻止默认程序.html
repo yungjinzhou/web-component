@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-阻止默认程序</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+    
+       $(function () {
+           
+             $("#form1").submit(function (event) {
+                 
+                //1.
+                // return false;
+
+                //2.
+                event.preventDefault();
+             });
+       })
+    </script>
+</head>
+<body>
+    
+    <form action="" id="form1">
+        <input type="text" value="内容" name="username">
+        <input type="submit">
+    </form>
+</body>
+</html>

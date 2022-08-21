@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-class和style的绑定</title>
+    <style>
+        .red{
+            color:red;
+        }
+        .font{
+            font-size: 50px;
+        }
+        .line{
+            text-decoration: underline;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el:'.box',
+                data:{
+                    cla:"red font",
+                    isTrue:false,
+                    isRed:true,
+                    classObj:{
+                        red:true,
+                        font:true
+                    },
+                    classList:['red','line'],
+                    style01:{
+                        "font-size":"30px"
+                    },
+                    style02:{
+                        "font-weight":"bold",
+                    },
+                   
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <!-- class 样式类名称 -->
+    <div class="box">
+        <!-- style ===== -->
+        <p :style="[style01,style02]">style第二种写法</p>
+
+        <p :style="style01">style第一种写法</p>
+
+
+        <!-- ============== class 样式类名称-->
+        <!-- <p :class="classList">5.class 变量的列表List</p>
+        <p :class="['line','font']">4.class 变量的列表</p>
+
+        <p :class="classObj">3.class 变量的对象</p>
+        <p :class="{line:isTrue,red:isRed}">2.class 变量的{类名称:变量}</p>
+
+        <p :class="cla">111.class 变量的字符串</p> -->
+
+    </div>
+    
+</body>
+</html>

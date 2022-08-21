@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-字符串1</title>
+
+    <script>
+       window.onload = function () {
+           
+           //1.拼接   +
+           var sName = "小明";
+           var sName2 = "隔壁老王";
+           var sName3 = "霜霜";
+           
+            //alert(sName + sName2 + sName3 + "是不是段子的名人?");
+
+           //2.类型转换
+           // parseInt() 手动转换
+           //parseFloat()
+           var iOne = 20;
+           var sTwo = "20";
+           var sSum = iOne + parseInt(sTwo);
+
+           //隐式转换 --系统自己转换
+           var sResult = iOne / sTwo;
+
+           if (iOne == sTwo) {//隐式转换
+               //alert("相等");
+           }
+
+           // ===
+           if (iOne === sTwo) {//先判断类型
+                alert("相等");
+           }else{
+                alert("不相等");
+           }
+
+
+            //精度问题
+           var fOne = 0.1;
+           var fTwo = 0.2;
+           sSum = fOne * 100 + fTwo*100;
+
+           alert(sSum/100);
+
+       }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

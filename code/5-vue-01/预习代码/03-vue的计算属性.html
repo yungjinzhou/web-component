@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-vue的计算属性</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            
+            var vm = new Vue({
+                el:'.box',
+                data:{
+                    message:'1234567',
+                    // reverseMessage:'ABCDEF'
+                    number:0
+                },
+                // 使用计算属性 将 下面操作的js代码 放到 vue里面实现
+                computed:{
+                    reverseMessage:function(){
+                       return this.message.split("").reverse().join("");
+                    }
+                },
+                watch:{
+                    number:function(newVal,oldVal){
+                        console.log(oldVal + '----' + newVal)
+                    }
+                },
+                methods:{
+                    fnBtnCilcik:function(){
+                        this.number += 1
+                    }
+                }
+
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <button v-on:click="fnBtnCilcik">{{number}}</button>
+
+        <p>
+            {{message.split("").reverse().join("")}}
+        </p>
+        <p>
+                {{reverseMessage}}
+        </p>
+    </div>
+</body>
+</html>

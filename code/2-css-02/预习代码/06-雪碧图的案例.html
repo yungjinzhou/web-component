@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-雪碧图的案例</title>
+
+    <style>
+      /* 
+       雪碧图: 精灵图  sprite:  一张大图上面放了N个小图片
+       好处:  减少网络请求的次数; 提高性能;  提升用户的体验性
+       */
+
+       .list{
+           width: 300px;
+            margin:0 auto;
+            list-style: none;
+       }
+
+       .list li{
+           height: 60px;
+           border-bottom: 1px dotted red;
+
+           line-height: 60px;
+           text-indent: 45px;
+
+            /* //每一个li标签 都有一个 背景图 */
+           background: url("images/bg01.png") no-repeat  0px  9px;
+       }
+       .list .li2{
+           background-position-y: -71px;
+       }.list .li2{
+           background-position-y: -71px;
+       }
+       .list .li3{
+           background-position-y: -151px;
+       }
+       .list .li4{
+           background-position-y: -234px;
+       }
+       .list .li5{
+           background-position-y: -311px;
+       }
+
+       .list li a{
+           text-decoration: none;
+            color: black;
+       }
+    
+    </style>
+</head>
+<body>
+
+    <ul class="list">
+        <li><a href="">美人鱼</a></li>
+        <li class="li2"><a href="">下水道的美人鱼</a></li>
+        <li class="li3"><a href="">猩球崛起</a></li>
+        <li class="li4"><a href="">美人鱼</a></li>
+        <li class="li5"><a href="">美人鱼</a></li>
+    </ul>
+    
+</body>
+</html>

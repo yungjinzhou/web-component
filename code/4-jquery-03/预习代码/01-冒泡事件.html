@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-冒泡事件</title>
+    <style>
+       .grandfater{
+           width: 400px;
+           height: 400px;
+           background: red;
+           margin-top: 100px;
+       }
+       .father{
+           width: 300px;
+           height: 300px;
+           background: green;
+        
+       }
+       .son{
+           width: 200px;
+           height: 200px;
+           background: blue;
+         
+       }
+    
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function () {
+          $(".son").click(function (event) { 
+             alert("son");
+             //阻止 事件的冒泡
+            //  event.stopPropagation();
+             //2.
+             return false;
+          });
+          $(".father").click(function () {  
+             alert("father");
+          });
+          $(".grandfater").click(function () {
+             alert("grandfatern");
+          });
+          $(window).click(function () {
+             alert("window");
+          });
+          
+      })
+    </script>
+</head>
+<body>
+    <div class="grandfater">
+            grandfater
+        <div class="father">
+                father
+            <div class="son">
+                    son
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

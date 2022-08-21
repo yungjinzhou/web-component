@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax请求数据</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function () {
+
+          // 发送前端 到后台 的网络请求 获取数据
+          // 网址 url
+          // 请求方式  get post
+          // 数据类型
+          // 成功 返回数据
+          // 失败
+
+          $.get({
+             url:"json/nameData.json",
+             dataType:'json',
+             success:function (dat) {
+              console.log(dat.data.name);
+            }
+
+          });
+
+           $.post({
+             url:"json/nameData.json",
+             dataType:'json',
+             success:function (dat) {
+              console.log(dat.data.name);
+            }
+
+          });
+
+          // $.ajax({
+          //   // 1.url
+          //   url:"json/nameData.json",
+          //   type:"get",
+          //   dataType:'json',
+          //   // 回调函数
+          //   success:function (dat) {
+          //     console.log(dat.data.name);
+          //   },
+          //   // 失败
+          //   error:function(){
+
+          //     alert('网络请求失败, 请稍后再试!')
+          //   }
+          // })
+
+      })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

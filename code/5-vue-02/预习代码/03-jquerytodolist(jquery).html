@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>todolist</title>
+	<style type="text/css">
+		.list_con{
+			width:600px;
+			margin:50px auto 0;
+		}
+		.inputtxt{
+			width:550px;
+			height:30px;
+			border:1px solid #ccc;
+			padding:0px;
+			text-indent:10px;			
+		}
+		.inputbtn{
+			width:40px;
+			height:32px;
+			padding:0px;
+			border:1px solid #ccc;
+		}
+		.list{
+			margin:0;
+			padding:0;
+			list-style:none;
+			margin-top:20px;
+		}
+		.list li{
+			height:40px;
+			line-height:40px;
+			border-bottom:1px solid #ccc;
+		}
+
+		.list li span{
+			float:left;
+		}
+
+		.list li a{
+			float:right;
+			text-decoration:none;
+			margin:0 10px;
+		}
+	</style>
+	<script src="js/vue.js"></script>
+	<script>
+		window.onload = function () {
+			
+			var vm = new Vue({
+				el:'.list_con',
+				data:{
+					dataList:['学习html','学习css','学习js','学jquery'],
+					content:""
+				},
+				methods:{
+					// 增加按钮的点击事件
+					fnAdd:function(){
+						// 1.判断是否为空
+						if (this.content == "") {
+							alert('请输入内容!');
+							return;
+						}
+						// 2.如果有内容  插入
+						this.dataList.push(this.content);
+
+						// 3.清空输入框
+						this.content = "";
+					},
+					fnDel:function(index){
+						// 删除数据
+						// 位置/角标,删除个数, 增加的内容p
+						this.dataList.splice(index,1)
+					},
+					fnUp:function(index){
+
+						if (index == 0) {
+							alert('到头了!');
+							return;
+						}
+
+						// 往上移动位置  操作的数据 和标签 
+						//1.获取当前的数据 做保留
+						var sData = this.dataList[index];
+
+						// 2.删除原先的 ul的数据 li
+						this.dataList.splice(index,1);
+
+						// 3.角标-1; 重新插入数据 
+						this.dataList.splice(index-1,0,sData);
+					},
+					fnDown:function(index){
+
+						if (index == this.dataList.length - 1) {
+							alert('到底了!');
+							return;
+						}
+
+						// 往下移动位置  操作的数据 和标签 
+						//1.获取当前的数据 做保留
+						var sData = this.dataList[index];
+
+						// 2.删除原先的 ul的数据 li
+						this.dataList.splice(index,1);
+
+						// 3.角标+1; 重新插入数据 
+						this.dataList.splice(index+1,0,sData);
+						
+					}
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+
+	<div class="list_con">
+
+	  <h2>To do list</h2>
+
+		<input v-model="content" type="text" name="" id="txt1" class="inputtxt">
+		<input @click="fnAdd" type="button" name="" value="增加" id="btn1" class="inputbtn">
+		
+		<ul id="list" class="list">
+			<li v-for="(item,index) in dataList">
+
+					<span>{{item}}</span>
+
+					<a @click="fnUp(index)" href="javascript:;" class="up"> ↑ </a>
+					<a @click="fnDown(index)" href="javascript:;" class="down"> ↓ </a>
+					<a @click="fnDel(index)" href="javascript:;" class="del">删除</a>
+			</li>
+
+
+			<!-- <li><span>学习html</span><a href="javascript:;" class="up"> ↑ </a><a href="javascript:;" class="down"> ↓ </a><a href="javascript:;" class="del">删除</a></li>
+			<li><span>学习css</span><a href="javascript:;" class="up"> ↑ </a><a href="javascript:;" class="down"> ↓ </a><a href="javascript:;" class="del">删除</a></li>
+			<li><span>学习javascript</span><a href="javascript:;" class="up"> ↑ </a><a href="javascript:;" class="down"> ↓ </a><a href="javascript:;" class="del">删除</a></li> -->
+
+		</ul>
+
+	</div>
+</body>
+</html>

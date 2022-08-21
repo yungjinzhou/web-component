@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-js正则</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        window.onload = function () {
+            // 纯数字
+            var reOne = new RegExp('^\d+$','i');
+            var reTwo = /^\\d+$/;
+
+            // test
+            var sOne = "123abc";
+
+            // alert(reOne.test(sOne));
+            // alert(reTwo.test(sOne));
+
+
+            // i,g 参数
+            var sTwo = 'abcabcA';
+            var reThre = /a/gi;
+            var sNew1 = reThre.test(sTwo);
+            alert(sNew1)
+            var sNew = sTwo.replace(reThre,"#");
+            alert(sNew)
+
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

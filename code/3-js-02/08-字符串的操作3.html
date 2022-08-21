@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-字符串的操作1</title>
+
+    <script>
+        window.onload = function () {
+            
+        //    4. 字符串反转
+        var sOne = '1234567';
+
+        // 1.字符串 -->数组
+        var aOne = sOne.split("");
+
+        // 2.数组有反转 reverse()
+        var aTwo = aOne.reverse();
+
+        // 3.数组-->字符串
+        var sNew = aTwo.join("");
+
+        // 弱语法 链式语法
+        var sNew = sOne.split("").reverse().join("");
+
+        console.log(sNew);
+
+            
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

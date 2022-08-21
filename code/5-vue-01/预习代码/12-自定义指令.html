@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>12-自定义指令</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+
+            Vue.directive("focus",{
+                inserted:function (el,bing) {
+                el.focus();
+                el.style.backgroundColor = "red";
+                console.log(bing.name)
+            }
+            })
+            
+            var vm = new Vue({
+                el:'.box',
+                // directives:{
+                //     focus:{
+                //         inserted:function(el,bing){
+                //             el.focus();
+                //             el.style.backgroundColor = "red";
+                //             console.log(bing.name)
+                //         }
+                //     }
+                // }
+            })
+            
+
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+       <input type="text" v-focus>
+    </div>
+    
+</body>
+</html>

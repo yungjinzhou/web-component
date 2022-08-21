@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤器</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            // 全局的过滤器
+            Vue.filter('movie',function (a) {
+                
+                    if (a > 18) {
+                        return "允许看电影!"
+                    } else {
+                        return "小毛孩!"
+                    }
+            })
+            
+            var vm = new Vue({
+                el:'.box',
+                data:{
+                    money:1000,
+                },
+                // 局部的 过滤器
+                filters:{
+                    moneyFiter:function(a){
+                        if (a > 100) {
+                            return "¥" + a;
+                        }else{
+                            return "小零钱"
+                        }
+                    }
+                }
+            })
+
+             var vm2 = new Vue({
+                el:'.app',
+                data:{
+                    age:28
+                }
+            })
+
+           
+
+           
+        }
+    </script>
+</head>
+<body>
+
+    <div class="app">{{age | movie}}</div>
+
+    <!-- money=50  ¥50 -->
+    <div class="box">{{money | moneyFiter}}</div>
+
+    
+</body>
+</html>

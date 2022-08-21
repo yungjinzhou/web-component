@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-vue的基本语法</title>
+
+    <style>
+        .red{
+            color: red;
+        }
+        .font{
+            font-size:50px;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+
+            // (条件)?"值1":"值2"  他有返回值
+            // if else 
+
+            // var sResult = 5>6?'大':'小';
+            // alert(sResult)
+
+            // 创建vue对象
+            var vm = new Vue({
+                el:'.box',
+                data:{
+                    linkData:"淘宝链接",
+                    url:'http://www.taobao.com',
+                    counter:0,
+                    contentPragraph:'三目运算 三元运算',
+                    isRed:false,
+                    sStr:'12345678'
+                },
+                 
+                
+            })  
+           
+        }
+    </script>
+</head>
+<body>
+
+    <div class="box">
+
+        <!-- 表达式 -->
+        <!-- 3.js 链式  字符串反转-->
+        <p>{{sStr.split('').reverse().join('')}}</p>
+
+        <!-- 2.三目运算 三元运算 -->
+        <p :class="isRed?'red':'font'">{{contentPragraph}}</p>
+
+        <!-- 1.累加的表达式 -->
+        <button @click="counter += 1">新的计数器:{{counter}}</button>
+
+
+        
+        <!-- // 3.调用方法 指令  v-on:简写 @-->
+        <!-- <button @click="fnAddClick">计数器: {{counter}}</button> -->
+        <!--  // 2.修改属性 指令 v-bind: 简写:-->
+        <!-- <a :href="url" target='_blank'>{{linkData}}</a> -->
+       
+    </div>
+    
+    
+</body>
+</html>

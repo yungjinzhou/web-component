@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+                
+                // 1.ES5.0
+                // var oOne = {
+                //     name:"张三",
+                //     age:18,
+                //     fnAlert:function(){
+                //         alert('ES5.0')
+                //     }
+                // }
+
+                // var oOne = new Object();
+                // oOne.name = "张三";
+                // oOne.age = 18;
+                // oOne.fnAlert = function () {
+                //     alert(oOne.name)
+                // }
+                // oOne.fnAlert()
+
+
+                // 2.ES6.0的简写 条件 变量名字 和 属性名字一致
+                let name = "张三";
+                let age = 18;
+                
+                // var fnAlert = function(){
+                //         alert(name)
+                //     }
+                var oOne = {
+                    name,
+                    age,
+                    fnAlert:function(){
+                        alert(this.name)
+                    }
+                }
+               
+
+                oOne.fnAlert();
+
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+    
+    
+    
+        </div>
+        
+    </body>
+    </html>

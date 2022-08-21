@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>14-匿名函数</title>
+
+    <script>
+        window.onload = function () {
+            // 14-匿名函数
+            //  匿名函数 不能单独的定义
+            // function () {
+                
+            // }
+                
+            // 1.获取按钮
+            var oBtn = document.getElementById('btn')
+            
+             // 3.弹框
+             function fnAlert() {
+                 alert('匿名函数!')
+             }
+
+            // 2.监听点击事件
+            // oBtn.onclick = fnAlert;
+
+            oBtn.onclick = function () {
+                 alert('匿名函数!')
+             }
+           
+
+
+
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">弹出提示框</button>
+</body>
+</html>

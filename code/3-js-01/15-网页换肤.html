@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网页换肤</title>
+    <style>
+        #red{
+            background: red;
+        }
+        #green{
+            background: green;
+        }
+
+        .blue{
+            color: gold;
+        }
+        .purple{
+            color: palevioletred;
+        }
+    </style>
+
+    <script>
+       window.onload = function () {
+                
+            // 监听 两个按钮的 点击事件 修改body的backgroundColor
+            // 1.获取标签
+            var oRedBtn = document.getElementById('red');
+            var oGreenBtn = document.getElementById('green');
+            var oBody = document.getElementById('bodys');
+
+            // 2.监听点击
+            oRedBtn.onclick = function () {
+                // 3.修改body的backgroundColor
+                // 错误
+                // body.style.backgroundColor = "red";
+                oBody.style.backgroundColor = "red";
+            }
+
+            oGreenBtn.onclick = function () {
+                // 3.修改body的backgroundColor
+                // 错误
+                // body.style.backgroundColor = "red";
+                oBody.style.backgroundColor = "green";
+            }
+
+            // 类名字的属性设置
+            oRedBtn.className = "purple";
+       }
+        
+    </script>   
+    
+</head>
+<body id="bodys">
+    
+    <input type="button" value="红色的背景" id="red">
+    <input type="button" value="绿色的背景" id="green">
+</body>
+</html>

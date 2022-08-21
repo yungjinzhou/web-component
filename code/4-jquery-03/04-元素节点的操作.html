@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-元素节点的操作</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            
+            // 元素节点(标签)操作
+            var $div = $('.box');
+
+            // 1.创建节点
+            // 空标签
+            var $newElement = $('<a>');
+            var $newElement = $('<div>新增加的内容!!!!!</div>')
+
+            // 2.插入节点
+            // 2.1 插入到参照物标签里面  父子关系
+                //  后面
+                // 参照标签将目标标签放到后面
+                // $div.append($newElement);
+                // 目标标签自己添加到 参照标签后面
+                // $newElement.appendTo($div);
+
+                // 前面
+                // $div.prepend($newElement);
+                // $newElement.prependTo($div);
+
+            // 2.2 插入到参照物标签外面  平级兄弟关系
+                // 前面
+                // $div.before($newElement);
+                // $newElement.insertBefore($div);
+
+                // 后面
+                // $div.after($newElement);
+                $newElement.insertAfter($div);
+
+            // 3.删除 remove()
+                // $div.remove();
+
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        这是参照物标签
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX请求数据</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            
+            // 请求数据
+            // 1.url
+            // 2.请求方式 get post
+            // 3.数据格式
+            // 4.有可能传参
+            // 5.返回成功的数据
+            // 6.访问失败
+
+            $.ajax({
+                // 1.url
+                url:'http://localhost:8888/json/data.json',
+                // 2.请求方式 get post
+                type:"get",
+                // 3.数据格式
+                dataType:'json',
+                // 4.有可能传参
+                // data:{}
+                // 5.返回成功的数据
+                success:function(dat){
+                    console.log(dat.name);
+                },
+                // 6.访问失败
+                error:function(){
+                    alert('请求失败!,请稍后再试!')
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

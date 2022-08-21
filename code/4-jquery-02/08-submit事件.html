@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-submit事件</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+
+            // form 的事件
+            $('.data').submit(function () {
+                // 自定义提交 拦截系统自带的 提交 ajax
+             
+                alert('提交数据');
+
+                // 阻止系统提交操作
+                return false;
+            })
+
+            // 提交数据 的事件
+            // $('input[type="submit"]').submit(function () {
+                
+            //     alert('提交数据');
+            // })
+        })
+    </script>
+</head>
+<body>
+    <form class="data">
+        <input type="text" name="username">
+       
+        <input type="submit" value="提交">
+    </form>
+    
+</body>
+</html>

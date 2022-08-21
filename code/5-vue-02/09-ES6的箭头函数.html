@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+
+            // 箭头函数 --函数的简写
+            // 2.作用 this指向的是window 通过箭头函数 可以改变指向为 当前对象
+            var fnTest = ()=>{
+                alert('test');
+            }
+            var fnTest = a=>{
+                alert(a);
+            }
+            var fnTest = (a,b)=>{
+                
+                alert(a + b);
+            }
+
+            var oOne = {
+                name:"老王",
+                fnAlert:function (){
+                    // 等一秒钟 在弹框
+                    setTimeout( ()=> {
+                        // this--->Window
+                        // 箭头函数
+                        alert(this.name);
+                    }, 1000);
+                   
+                }
+            }
+            oOne.fnAlert()
+
+            // fnTest(100,10)
+                
+            //    1.函数
+            // function fnTest() {
+            //     alert('test')
+            // }    
+            // var fnTest = function () {
+            //     alert('test2')
+            // }
+            // var fnTest = function (a) {
+            //     alert(a)
+            // }
+            // var fnTest = function (a,b) {
+            //     alert( a + b)
+            // }
+
+            // fnTest(10,40);
+
+
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+    
+    
+    
+        </div>
+        
+    </body>
+    </html>

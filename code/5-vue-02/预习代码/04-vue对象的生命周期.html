@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+                
+                var vm = new Vue({
+                    el:'.box',
+                    data:{
+                        counter:0,
+                    },
+                    beforeCreate:function (){
+                        console.log('beforeCreate---对象创建之前')
+                    },
+                    created:function (){
+                        console.log('created---对象创建之后')
+                    },
+
+                    beforeMount:function (){
+                        console.log('beforeMount---对象在使用之前')
+                                        },
+
+                    // 知道  vue请求数据 必须在 mounted阶段操作
+                    mounted:function (){
+                        console.log('mounted---对象使用---请求后台数据')
+                    },
+
+                    beforeUpdate:function (){
+                        console.log('beforeUpdate---属性或者数据更新之前')
+                            },
+                    updated:function (){
+                         console.log('updated---属性或者数据更新之后')
+                    }
+
+                    
+
+
+
+                })
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box" @click="counter += 1">
+    
+            vue的生命周期: {{counter}}
+    
+        </div>
+        
+    </body>
+    </html>

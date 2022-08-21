@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+
+                // 组件 -- vue的对象
+          
+                Vue.component('navbar',{
+                    // 接收外界的传入的参数
+                   
+                    template:'<div style="background: lightgray;height: 50px;line-height: 50px">'
+                            +'<span style="color:red">{{content}}</span>'
+                            +'<span @click="fnAlert">请登录注册</span>'
+                            +'<span style="float:right">网站导航</span>'
+                            +'</div>',
+                    data:function () {
+                       return {
+                        //    如果有传参 不写变量
+                           content:""
+                       }
+                    },
+                    methods:{
+                        fnAlert:function(){
+                            alert('组件的方法')
+                        }
+                    },
+                    props:['content'],
+
+                })
+                
+                var vm = new Vue({
+                    el:'.box'
+                })
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+            
+            <navBar content="123"></navBar>
+            
+            
+        </div>
+
+        
+    </body>
+    </html>

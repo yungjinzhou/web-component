@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-jquery的选择器</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 文档加载完毕
+        $(document).ready(function () {
+            
+            // 1.标签选择器
+            // var $div = $('css的选择器')
+            //  在jquery中 $div 只修饰标签对象(区分原生js),其他的类型 还是按照 匈牙利命名风格
+            var $div = $('div');
+
+            // 2.类选择器
+            var $div = $('.box')
+
+            // 3.ID选择器
+            var $div = $('#div2')
+
+            // 4.层级选择器
+            var $div = $('div p')
+
+            // 5.组选择器
+            var $div = $('div,a')
+
+            // 6.属性选择器
+            var $div = $('a[name="key"]');
+
+            // 设置文字颜色红色
+            $div.css({'color':'red'})
+        })
+    </script>
+</head>
+<body>
+    <!-- div{$}*5 -->
+    <div class="box">1</div>
+    <div id="div2">2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5
+        <p>
+            段落标签
+        </p>
+    </div>
+
+    <a href="#" name="key">行内元素</a>
+    
+</body>
+</html>

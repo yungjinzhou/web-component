@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-事件的委托</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function () {
+          
+         var  $lis = $(".list li");
+
+         //事件的委托
+         //1. 减少事件的绑定次数,提高性能
+         //2. 新增元素有相同的事件
+
+         //委托的写法 --- 父元素
+        //  $(this)--操作的元素
+         $(".list").delegate("li","click",function (event) {
+             
+             $(this).css({"color":"red"});
+
+            //  console.log($(this));
+            console.log(event.type);
+         });
+
+           var sLi = "<li>" + "新增的标签" + "</li>";
+
+         $(".list").html(sLi);
+
+
+         //传统的 click事件 -- 4次
+        //  $lis.click(function () {
+             
+        //     $(this).css({"color":"red"});
+        //  })
+
+       
+
+      })
+    </script>
+</head>
+<body>
+
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    
+</body>
+</html>

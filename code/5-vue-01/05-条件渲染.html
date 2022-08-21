@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-条件渲染</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el:'.app',
+                data:{
+                    isFirst:6,
+                    isShow:true
+                }
+            })
+           
+        }
+    </script>
+</head>
+<body>
+    <div class="app">
+        <!-- v-show 显示
+        实质 display:none
+        注意在vue中使用v-show ;原先css代码不能设置display属性
+        -->
+
+        <p v-show="isShow">v-show 是否显示标签</p>
+
+        <!-- <p v-if="isFirst == 1">条件渲染 第一个标签</p>
+        <p v-else-if="isFirst == 2">条件渲染 第222222个标签</p>
+        <p v-else-if="isFirst == 3">条件渲染 第3333个标签</p>
+        <p v-else>条件渲染 第4444个标签</p> -->
+
+        <!-- <p v-if="isFirst">条件渲染 第一个标签</p>
+        <p v-else>条件渲染 第222222个标签</p> -->
+
+        <!-- v-if 如果是false 删除了标签 -->
+        <!-- <p v-if="isFirst">条件渲染 第一个标签</p> -->
+
+    </div>
+    
+</body>
+</html>

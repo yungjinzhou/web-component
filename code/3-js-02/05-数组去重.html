@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-数组去重</title>
+
+    <script>
+        window.onload = function () {
+            
+            var aOne = ["a","a","b","b","c","d","d","e" ];
+            // 原始的角标  0  1    2   3   4   5   6   7
+
+            // indexOf   0   0   2   2   4   5    5  7
+            //  原始角标  == indexOf 我们需要的元素
+
+            // 去重功能
+            //  1.双重循环遍历 对比元素是否相等 
+        
+            //  2.indexOf 重复的元素,返回第一次出现的角标
+            
+            var aNew = []
+            for (var index = 0; index < aOne.length; index++) {
+                // 元素
+                var element = aOne[index];
+
+                // 原始角标  == indexOf 我们需要的元素
+                if (index == aOne.indexOf(element)) {
+                    
+                    aNew.push(element);
+                }
+                
+            }
+
+            // 验证
+            alert(aNew)
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

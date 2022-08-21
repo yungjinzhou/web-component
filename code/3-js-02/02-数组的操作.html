@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-数组的操作</title>
+
+    <script>
+        window.onload = function () {
+            
+            var aOne = [1,2,3,4,5,6];
+
+            // 1.增加 --?最后面
+            // aOne.push(7,8,9,10);
+
+            // 2.删除 pop 删除最后一个
+            // aOne.pop()
+
+            // 3.改
+            // 4.查询
+            // aOne[2] = "#";
+
+            // 5.长度 个数 length
+            // var result = aOne.length;
+
+            // 6.indexOf 
+            //  存在  下标
+            //  不存在 -1
+            //  如果有重复的元素  只会返回 元素 第一次出现的角标
+            var aTwo = [1,1,1,2,2,2];
+            var result = aTwo.indexOf(1);
+
+            // 7.数组的倒置 反转 reverse()
+            // aOne.reverse();
+
+            // 8.拆分字符串 join() 2018-08-25
+            // var result = aOne.join();//1,2,3
+            // var result = aOne.join("");//123
+            // var result = aOne.join("-")
+
+            // 9.splice 能增加 能删除
+            // 9.1 按照角标理解  开始角标需要包含
+            // 9.2 按照位置理解  直接数个数
+            var aThre = ["a","b","*","e"];
+            // aThre.splice(3,1,"R");
+            // aThre.splice(2,2,"*");
+            // aThre.splice(1);//其他的都删除
+
+            console.log(aThre);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

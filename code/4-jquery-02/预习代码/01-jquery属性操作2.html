@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-jquery属性操作2</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function () {
+          
+        // 01-jquery属性操作2
+        var $img = $(".pic");
+        //1. 标签 行内 自带的属性 prop()
+        var sSrc = $img.prop("src");
+
+        //写入
+        $img.prop({"src":"images/002.jpg"});
+
+        //value用的比较多 
+        var sValue = $("input").prop("value");
+        var sValue2  = $("input").val();
+
+       
+
+        //2. 标签包裹的内容 
+        //读
+       var  sContent = $(".box").html();
+
+       //写入
+       $(".box").html("新替换的内容");
+
+
+
+       //了解的内容 attr === 自定义的属性
+    //    var sCustom = $img.prop("reminbi");
+        var sCustom = $img.attr("reminbi");
+
+       alert(sCustom);
+
+      })
+    </script>
+</head>
+<body>
+
+    
+    <div class="box">包裹的内容</div>
+
+    <input type="text" value="普通的文本框">
+    <img class="pic" src="images/001.jpg" alt="风景图1"  reminbi="20W">
+</body>
+</html>

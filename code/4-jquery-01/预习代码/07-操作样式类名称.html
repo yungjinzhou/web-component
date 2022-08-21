@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-操作样式类名称</title>
+    <style>
+       .box{
+           width: 200px;
+           height: 200px;
+       }
+       .red{
+           background: red;
+       }
+       .green{
+           background: green;
+       }
+    </style>
+
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+       $(function () {
+
+        //1.获取标签
+        var $div = $(".box");
+
+        //2.添加样式 类名称
+        // $div.addClass("red");
+        $div.addClass("green");
+
+        //3.删除 样式类 名称
+        // $div.removeClass("green");
+
+        //4. toggle  切换
+        // 如果没有  就添加
+        // 如果有    就删除
+        $div.toggleClass("green");
+
+           
+       })
+    </script>
+</head>
+<body>
+
+    <div class="box">div的标签</div>
+    
+</body>
+</html>

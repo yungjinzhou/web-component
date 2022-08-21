@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>12-margin-top塌陷</title>
+
+    <style>
+        .box{
+
+            width: 300px;
+            height: 400px;
+            background-color: lightgrey;
+
+             /* border: 1px  solid black;  */
+
+            /* overflow: hidden; */
+            /* 解决margin-top塌陷的问题 
+            
+            1.设置边框 父元素
+            2.设置父元素 overflow:hidden
+            3.伪类
+            */
+        }
+
+
+/* clearfix清除塌陷的类名 是约定俗称, 你起别的名字都可以 */
+        .clearfix:before{
+
+            content: "";
+            display: table;
+        }
+
+        .son{
+
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+               margin-top:50px;   
+        }
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <div class="son"></div>
+    </div>
+</body>
+</html>

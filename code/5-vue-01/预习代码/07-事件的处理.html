@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el:'.box',
+                methods:{
+                    fnClick:function(){
+                        alert("子元素")
+                    },
+                    fnSonClick:function(){
+                        alert('孙子元素')
+                    },
+                    fnFathterClick:function(){
+                        alert('父元素')
+                    }
+                }
+            })
+
+            var vm2 = new Vue({
+                el:'#form1',
+                methods:{
+                    fnSubmit:function (){
+
+                       alert('哈哈')
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <form action="" id="form1">
+        <input type="text" name="username">
+        <input type="submit" value="提交" @click="fnSubmit">
+
+    </form>
+
+    <div class="box" v-on:click="fnFathterClick">
+        <div v-on:click.stop="fnClick">
+            按钮事件的操作
+            <div v-on:click.stop="fnSonClick">
+                孙子元素
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

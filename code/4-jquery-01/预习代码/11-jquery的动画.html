@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>11-jquery的动画</title>
+    <style>
+        div{
+            width: 100px;
+            height: 200px;
+        }
+        .box{
+            background-color: red;
+        }
+        .box1{
+            background: green;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery.color.js"></script>
+    <script>
+       $(function () {
+
+        //注意点: jquery中的动画 一般对 尺寸生效 px
+        //渐变色动画  color.js的函数库
+
+        
+            //1.获取标签
+            var $div = $(".box");
+            var $div1 = $(".box1");
+            //$div.css({"width":1000});
+
+            $div.animate({
+                "width":1000,
+                "background-color": "yellow"
+
+            },3000,"linear",function () {
+                
+                //alert("动画结束");
+            });
+
+            $div1.animate({
+                "width":1000
+
+            },3000,"swing",function () {
+                
+                //alert("动画结束");
+            });
+           
+
+       })
+    
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    
+</body>
+</html>

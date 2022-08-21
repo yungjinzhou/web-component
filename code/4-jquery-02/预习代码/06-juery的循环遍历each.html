@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-juery的循环遍历each</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+       $(function () {
+
+           //1.获取li
+           var $lis = $(".list li");//6个
+
+            //遍历 each
+            // $lis.each(function (a,b) {
+
+            //     //如果 一个参数 角标
+            //     console.log(a);
+            //     //如果两个 第一个角标 第二个是标签JS
+            //     console.log(b);
+
+              
+            //     $(b).click(function () {
+            //         $(this).css({"color":"red"});
+            //     })
+
+                
+            //     // $(this).click(function () {
+            //     //     $(this).css({"color":"red"})
+            //     // })
+            // })
+
+
+            for (let index = 0; index < $lis.length; index++) {
+                var element = $lis.eq(index);
+
+                element.click(function () {
+                    $(this).css({"color":"red"});
+                })
+                
+            }
+
+
+        //    $lis.click(function () {
+               
+        //        $(this).css({"color":"red"})
+
+        //    })
+           
+       })
+    
+    </script>
+</head>
+<body>
+
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    
+</body>
+</html>

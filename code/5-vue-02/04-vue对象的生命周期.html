@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+                
+                var vm = new Vue({
+                    el:'.box',
+                    data:{
+                        counter:0
+                    },
+                    beforeCreate:function () {
+                        console.log('beforeCreate ===== 对象实例化之前init')
+                    },
+                    created:function () {
+                        console.log('created ===== 对象实例化之后')
+                    },
+                    beforeMount:function () {
+                        console.log('beforeMount ===== 对象挂载之前')
+                    },
+
+                    mounted:function () {
+                        console.log('mounted ===== 对象挂载之后--请求服务器的数据')
+                    },
+                    
+                    
+                    beforeUpdate:function () {
+                        console.log('beforeUpdate ===== 数据或者属性 更新之前')
+                    },
+                    updated:function () {
+                        console.log('updated ===== 数据或者属性 更新之后')
+                    }
+                })
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box" @click = "counter += 1">
+    
+            vue对象的生命周期 : {{counter}}
+    
+        </div>
+        
+    </body>
+    </html>

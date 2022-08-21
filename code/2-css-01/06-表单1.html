@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-表单1</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 1000px;
+
+            border: 1px solid red;
+
+            /* 水平居中 */
+            margin: 0 auto;
+            
+        }
+        /* 默认 宽度 和父元素  一致 */
+        h2{
+            text-align: center;
+        }
+
+        input{
+            /* 去掉外面蓝色的框 */
+            /* outline: none; */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- form
+    action: 提交的网址 默认当前的网址
+
+    method: 提交的方式 默认get 登录 不全
+                       post
+                       
+    -->
+
+    <form class="box" action="" method="get">
+        <h2>个人信息等级表</h2>
+        <p>
+            <!-- 1.用户名 -->
+            <label for="abc">用户名:</label>
+            <input id="abc" type="text" name="username" placeholder="请输入用户名">
+        </p>
+        
+        <p>
+            <!-- 2.密码 -->
+            <label >密&nbsp;&nbsp;&nbsp;码:</label>
+            <input  type="password" name="pwd">
+        </p>
+        
+        <p>
+            <!-- 3.性别 -->
+            <label >性&nbsp;&nbsp;&nbsp;别:</label>
+            <input type="radio" name="sex" value="man">男
+            <input type="radio" name="sex" value="woman">女
+            
+        </p>
+        <p>
+            <!-- 4.爱好 -->
+            <label >爱&nbsp;&nbsp;&nbsp;好:</label>
+            <input type="checkbox" name="like" value="0">看妹子
+            <input type="checkbox" name="like" value="1">看帅哥
+            <input type="checkbox" name="like" value="2">写代码
+            <input type="checkbox" name="like" value="3">健身
+            
+        </p>
+        <p>
+            <!-- 5.上传文件 -->
+            <label >玉&nbsp;&nbsp;&nbsp;照:</label>
+            <input type="file" name="photo">
+        </p>
+        <p>
+            <!-- 6.下拉列表 -->
+            <label >籍&nbsp;&nbsp;&nbsp;贯:</label>
+            
+            <select name="address">
+                <option value="0">北京</option>
+                <option value="1">上海</option>
+                <option value="2">广州</option>
+                <option value="3" selected="selected">深圳</option>
+            </select>
+        </p>
+        <p>
+            <!-- 7.文本域 
+            cols="30" rows="10"
+            -->
+            <label >个人描述:</label>
+            <textarea name="info"></textarea>
+        </p>
+        <!-- 8.注册按钮 -->
+        <input type="submit" value="注册">
+        <!-- 9.重置按钮 -->
+        <input type="reset">
+        <!-- 10.隐藏域 -->
+        <input type="hidden">
+
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-鼠标的事件</title>
+    <style>
+       .red{
+           width: 400px;
+           height: 400px;
+           background: red;
+           overflow: hidden;
+       }
+       .green{
+           height: 100px;
+           background: green;
+           margin-top:100px;
+           font-size: 30px;
+           color: white;
+           font-weight: bold;
+       }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+       $(function () {
+           
+        //    1.mouseover -- out   进入子元素也会触发事件
+        var iIndex = 0;
+        // $(".red").mouseover(function () {
+        //     iIndex++;
+        //     $(".green").html(iIndex);
+        // });
+        // $(".red").mouseout(function () {
+        //     iIndex++;
+        //     $(".green").html(iIndex);
+        // });
+
+        // $(".red").mousemove(function () {
+        //     iIndex++;
+        //     $(".green").html(iIndex);
+        // });
+
+
+        //   2.mouseenter -- leave 进入子元素不会触发事件
+        // $(".red").mouseenter(function () {
+        //     iIndex++;
+
+        //     $(".green").html(iIndex);
+        // })
+
+        //  3.hover
+        $(".red").hover(function (event) {
+            console.log(event.type);
+            iIndex++;
+
+            $(".green").html(iIndex);
+        })
+
+       })
+    </script>
+</head>
+<body>
+
+    <div class="red">
+        <div class="green"></div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-jquery的属性操作2</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            //1.获取焦点事件
+            // 自动获取焦点 不传参数
+            // $('.one').focus();
+
+            // 监听获取焦点的事件
+            // $('.one').focus(function () {
+            //     console.log('获取焦点!')
+            // })
+
+            // 2.失去焦点 blur
+            $('.one').blur(function () {
+                console.log('失去焦点!')
+            })
+
+        })
+    </script>
+</head>
+<body>
+
+    <!-- 焦点 事件 输入框 -->
+
+    <input type="text" class="one">
+    <input type="text" class="two">
+    
+</body>
+</html>

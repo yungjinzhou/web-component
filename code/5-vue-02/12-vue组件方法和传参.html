@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+
+                Vue.component('method-div',{
+                    // props接收外界的传参
+                    props:['content'],
+                    template:'<div @click="fnAlert" class="app" style="background:red"><a href="">{{content}}</a></div>',
+                    data:function(){
+                        return{
+                            // content:"百度的链接"
+                        }
+                    },
+                    methods:{
+                        fnAlert:function(){
+                            alert(this.content)
+                        }
+                    }
+                })
+                
+                var vm = new Vue({
+                    el:'.box'
+                })
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+
+            
+            <method-div content="淘宝拍的链接"></method-div>
+    
+        </div>
+
+        <!-- 组件  html  css  js -->
+        
+    </body>
+    </html>

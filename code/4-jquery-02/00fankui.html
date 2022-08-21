@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <!-- 
+    前端不想学太好,怕陷进去,
+    出来后不会python了,
+    这就是我不学前端的理由!
+
+    js中windows.onload的作用域中的函数,
+
+     (1)是否是按顺序执行?有没有什么优先级? 
+
+     (2)第一个函数需要后面的参数,而第二个函数不需要参数的话,
+     
+     函数执行顺序是先加载后面的参数,在运行函数1,函数2,
+
+     还是先运行函数二,再加载参数,再运行函数一?
+
+      (3)不想改变函数的书写顺序,想要先运行后面的函数再运行前面的函数,该怎么操作?
+   
+
+    "" ''什么时候用单引号，什么时候用双引号 动画，
+    '字符串' == "字符串"
+    " '' " == ' input[name="fsd"] '
+
+    要是颜色设置为什么会越走越透明直至消失
+
+    
+    放大浏览器
+    1200px: 100%
+    天天生鲜的界面放大和缩小 部分区域的格式会发生变化,请问老师怎么解决这个问题. 
+
+        什么时候用标签获取，什么时候用class获取，
+        id获取，开心就好
+        在jquery里面，希望老师可以总结一下懵了~
+        
+        希望老师的代码稍微清晰一些,最好不要来回切屏,这样不利于理解代码,
+        以及要讲的内容,请老师slowlyslowly,不要着急,可以讲的稍微慢一点.
+    
+-->
+<style>
+    .red{
+        color:red;
+    }
+
+</style>
+<script>
+    $(function () {
+        
+        var $div = $('.box');
+        $div.siblings('p').addClass('red');
+
+        var sum = test2();
+        alert(test1(sum));
+
+        function test1(a) {
+            return a+10;
+        }
+        function test2() {
+            return 10
+        }
+        function test3() {
+            return 100
+        }
+    })
+</script>
+</head>
+<body>
+    <div class="box">1</div>
+
+
+    <div class="box1">2</div>
+    <p>段落标签</p>
+    <div class="box2">3</div>
+    <div class="box3">4</div>
+    <div class="box4">5</div>
+</body>
+</html>
